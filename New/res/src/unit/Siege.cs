@@ -12,7 +12,22 @@ namespace New.res.src.unit
         public Siege(int team, Point position)
             : base(@"siege.png", team, position, Type.siege)
         {
+            
+        }
 
+        public override void Update()
+        {
+            if (!isInitialized)
+            {
+                _armor = 1;
+                _range = 200;
+                _hp = 12;
+                _damage = 11;
+                _gun = new SiegeWeapon(_damage, GameScene.Instance);
+                _cooldownValue = 100;
+                _speed = 1;
+            }
+            base.Update();
         }
     }
 }

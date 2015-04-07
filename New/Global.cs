@@ -7,8 +7,15 @@ using Otter;
 
 namespace New
 {
+    static class Teams
+    {
+        static public List<Entity> redTeam = new List<Entity>();
+        static public List<Entity> bluTeam = new List<Entity>();
+    }
     class Global
     {
+        public const float damageReducingCoefficient = 0.9f;
+
         public static Session playerOne;
         public const int Width = 800;
         public const int Height = 800;
@@ -20,18 +27,18 @@ namespace New
 
         public static void ReduceVector(ref Vector2 vector, float limit)
         {
-            var EPSILON = 0.00001f;
+            var EPSILON = 0.001f;
             while (vector.Length > limit + EPSILON)
             {
                 vector.X *= 0.9f;
                 vector.Y *= 0.9f;
             }
-            if (Math.Abs(vector.X) < 0.001f) vector.X = 0;
-            if (Math.Abs(vector.Y) < 0.001f) vector.Y = 0;
+            if (Math.Abs(vector.X) < 0.1f) vector.X = 0;
+            if (Math.Abs(vector.Y) < 0.1f) vector.Y = 0;
         }
 
-        public static Point redAncientCoords = new Point(100, 100);
-        public static Point bluAncientCoords = new Point(700, 700);
+        public static Point redAncientCoords = new Point(400, 100);
+        public static Point bluAncientCoords = new Point(400, 700);
     }
 
     static class Team

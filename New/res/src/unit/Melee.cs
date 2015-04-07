@@ -12,9 +12,22 @@ namespace New.res.src.unit
         public Melee(int team, Point position)
             : base(@"melee.png", team, position, Type.melee)
         {
-
+            
         }
-
+        public override void Update()
+        {
+            if (!isInitialized)
+            {
+                _armor = 1;
+                _range = 10;
+                _hp = 15;
+                _damage = 4;
+                _gun = new MeleeWeapon(_damage, GameScene.Instance);
+                _cooldownValue = 20;
+                _speed = 2;
+            }
+            base.Update();
+        }
         
     }
 }

@@ -24,7 +24,7 @@ namespace New.res.src.weapons.projectiles
             X = x;
             Y = y;
             _direction = new Vector2(target.X - X, target.Y - Y);
-            //LifeSpan = 70;
+            LifeSpan = 100;
         }
 
         public override void Update()
@@ -37,7 +37,7 @@ namespace New.res.src.weapons.projectiles
             X += _direction.X;
             Y += _direction.Y;
 
-            if (X == _target.X && Y == _target.Y)
+            if (Math.Abs(X - _target.X) <= 10 && Math.Abs(Y - _target.Y) <= 10)
             {
                 _target.Damage(_dmg);
                 RemoveSelf();

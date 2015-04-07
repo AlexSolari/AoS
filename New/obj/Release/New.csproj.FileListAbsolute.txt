@@ -1,0 +1,16 @@
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\New.exe.config
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\libsndfile-1.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\openal32.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\csfml-audio-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\csfml-graphics-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\csfml-window-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\New.exe
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\New.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\Otter.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\sfmlnet-graphics-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\sfmlnet-window-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\sfmlnet-audio-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Release\Otter.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\New\obj\Release\New.csprojResolveAssemblyReference.cache
+C:\Users\Cheese\Documents\GitHub\AoS\New\obj\Release\New.exe
+C:\Users\Cheese\Documents\GitHub\AoS\New\obj\Release\New.pdb
