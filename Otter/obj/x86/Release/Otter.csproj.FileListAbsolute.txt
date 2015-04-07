@@ -1,0 +1,13 @@
+C:\Users\Solari\Desktop\Otter\bin\Release\libsndfile-1.dll
+C:\Users\Solari\Desktop\Otter\bin\Release\openal32.dll
+C:\Users\Solari\Desktop\Otter\bin\Release\csfml-audio-2.dll
+C:\Users\Solari\Desktop\Otter\bin\Release\csfml-graphics-2.dll
+C:\Users\Solari\Desktop\Otter\bin\Release\csfml-window-2.dll
+C:\Users\Solari\Desktop\Otter\bin\Release\Otter.dll
+C:\Users\Solari\Desktop\Otter\bin\Release\Otter.pdb
+C:\Users\Solari\Desktop\Otter\bin\Release\sfmlnet-audio-2.dll
+C:\Users\Solari\Desktop\Otter\bin\Release\sfmlnet-graphics-2.dll
+C:\Users\Solari\Desktop\Otter\bin\Release\sfmlnet-window-2.dll
+C:\Users\Solari\Desktop\Otter\obj\x86\Release\Otter.dll
+C:\Users\Solari\Desktop\Otter\obj\x86\Release\Otter.pdb
+C:\Users\Solari\Desktop\Otter\obj\x86\Release\Otter.csprojResolveAssemblyReference.cache
