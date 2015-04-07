@@ -14,7 +14,7 @@ namespace New.res.src.weapons.projectiles
             :base(target, dmg, X, Y)
         {
             _sprite = Image.CreateCircle(0, Color.White);
-            _collider = new CircleCollider(1, Tags.projetile);
+            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
             SetGraphic(_sprite);
             SetCollider(_collider);
@@ -26,7 +26,7 @@ namespace New.res.src.weapons.projectiles
             : base(target, dmg, X, Y)
         {
             _sprite = Image.CreateCircle(1, Color.White);
-            _collider = new CircleCollider(1, Tags.projetile);
+            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
             SetGraphic(_sprite);
@@ -39,7 +39,7 @@ namespace New.res.src.weapons.projectiles
             : base(target, dmg, X, Y)
         {
             _sprite = Image.CreateCircle(2, Color.White);
-            _collider = new CircleCollider(2, Tags.projetile);
+            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
             SetGraphic(_sprite);
@@ -55,7 +55,7 @@ namespace New.res.src.weapons.projectiles
         {
 
             _sprite = Image.CreateCircle(0, Color.White);
-            _collider = new CircleCollider(1, Tags.projetile);
+            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
             SetGraphic(_sprite);
@@ -65,7 +65,7 @@ namespace New.res.src.weapons.projectiles
         public override void Update()
         {
             _tickCounter += GoodRnd.NextBin();
-            if (_tickCounter % 2 == 0)
+            if (_tickCounter % 2 == 0 && _target.alive)
             {
                 Game.Scene.Add(new Particle(X, Y, "star.png", 4, 4)
                 {

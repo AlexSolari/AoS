@@ -26,7 +26,6 @@ namespace New.res.src.unit
                 Bar.String = ((int)_hp).ToString();
                 if (_team == Team.Blu) Bar.Color = Color.Green;
                 else Bar.Color = Color.Red;
-                Bar.Render();
                 GameScene.Instance.AddGraphics(Bar);
             }
             base.Update();

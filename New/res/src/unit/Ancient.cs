@@ -38,13 +38,13 @@ namespace New.res.src.unit
         {
             Console.WriteLine("CREEPZ!!!!");
 
-            Game.Scene.Add(new Melee(_team, new Point((int)(X + GoodRnd.gen.Next(-20,20)), (int)(Y + GoodRnd.gen.Next(-20, 20)))));
+            Game.Scene.Add(new Melee(_team, new Point((int)(X + _team * 10), (int)(Y + _team * 20))));
 
 
-            Game.Scene.Add(new Melee(_team, new Point((int)(X + GoodRnd.gen.Next(-20, 20)), (int)(Y + GoodRnd.gen.Next(-20, 20)))));
+            Game.Scene.Add(new Melee(_team, new Point((int)(X + _team * 20), (int)(Y + _team * 10))));
 
 
-            Game.Scene.Add(new Range(_team, new Point((int)(X + GoodRnd.gen.Next(-20, 20)), (int)(Y + GoodRnd.gen.Next(-20, 20)))));
+            Game.Scene.Add(new Range(_team, new Point((int)(X - _team * 25), (int)(Y + _team * 25))));
 
             if (_siegeCD == 0)
             {

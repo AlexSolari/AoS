@@ -9,6 +9,10 @@ namespace New.res.src.unit
 {
     abstract class Unit : Entity
     {
+        protected int _handle;
+
+        public int handle { get { return _handle; } }
+
         protected Text Bar;
         protected int _type;
 
@@ -16,8 +20,11 @@ namespace New.res.src.unit
         protected Collider _collider;
         protected int _team;
         protected int _hp;
+        protected int _armor;
 
         protected int _damage;
+
+        protected int _idleTimer = 0;
 
         protected Vector2 _direction;
         protected int _range;
@@ -32,12 +39,14 @@ namespace New.res.src.unit
 
         public Unit(string spritePath, int team, Point position, int type)
         {
+            _handle = GoodRnd.gen.Next(Int32.MinValue, Int32.MaxValue);
             _sprite = new Image(spritePath);
             Bar = new Text(16);
 
             _team = team;
             X = position.X;
             Y = position.Y;
+
 
             _type = type;
 
@@ -46,7 +55,7 @@ namespace New.res.src.unit
 
         public void Damage(int value)
         {
-            _hp -= value;
+            _hp = (int)(_hp - Math.Round(value * Math.Pow(0.94, _armor), MidpointRounding.ToEven));
             if (_hp <= 0)
             {
                 GameScene.Instance.RemoveGraphic(Bar);
@@ -61,15 +70,58 @@ namespace New.res.src.unit
 
         public bool alive
         {
-            get { return _hp >= 0; }
+            get { return _hp > 0; }
         }
 
         protected void AITick()
         {
+            var tmpCollider = _collider;
+
             float prevX = X;
             float prevY = Y;
 
-            if (_type != Type.ancient || _type != Type.tower)
+            _idleTimer--;
+            
+            float x;
+            float y;
+
+            for (var range = 0; range <= _range; range+=10 )
+                for (int deg = 0; deg < 360; deg += 10)
+                {
+                    x = X + range * (float)Math.Sin((deg * Math.PI / 180));
+                    y = Y + range * (float)Math.Cos((deg * Math.PI / 180));
+
+
+                    //if (_type == Type.melee) Game.Scene.Add(new Particle(x, y, "star.png", 4, 4)
+                    //{
+                    //    LifeSpan = 2
+                    //});
+
+                    if (tmpCollider.Overlap(x, y, Tags.unit) && ((Unit)tmpCollider.CollideEntity(x, y, Tags.unit)).team != _team)
+                    {
+                        var target = (Unit)tmpCollider.CollideEntity(x, y, Tags.unit);
+                        
+                        bool isInRange = (Math.Sqrt(Math.Pow(X - target.X, 2) + Math.Pow(Y - target.Y, 2)) <= _range);
+                        if (isInRange)
+                        {
+                            //X = prevX;
+                            //Y = prevY;
+                            if (_cooldown == 0)
+                            {
+                                _gun.Shoot(target);
+                                _cooldown = _cooldownValue;
+                                _idleTimer = _cooldownValue;
+                                if (_type != Type.ancient && _type != Type.tower) target._idleTimer = 20;
+                            }
+
+                        }
+
+                    }
+
+
+                }
+
+            if (_idleTimer<=0 && (_type != Type.ancient || _type != Type.tower))
             {
                 _direction.X = _targetPoint.X - X;
                 _direction.Y = _targetPoint.Y - Y;
@@ -78,42 +130,7 @@ namespace New.res.src.unit
 
                 X += Convert.ToInt32(_direction.X);
                 Y += Convert.ToInt32(_direction.Y);
-
-                //_sprite.X = X;
-                //_sprite.Y = Y;
-
-                //_collider.X = X;
-                //_collider.Y = Y;
             }
-
-            float x;
-            float y;
-            for (int deg = 0; deg < 180; deg+=2)
-            {
-                x = X + _range*(float)Math.Sin((deg * Math.PI / 180));
-                y = Y + _range * (float)Math.Cos((deg * Math.PI / 180));
-
-                if (Collider.Overlap(x, y, Tags.unit) && ((Unit)_collider.CollideEntity(x, y, Tags.unit)).team != _team)
-                {
-                    var target = (Unit)_collider.CollideEntity(x, y, Tags.unit);
-                    bool isInRange = (Math.Sqrt(Math.Pow(X - target.X, 2) + Math.Pow(Y - target.Y, 2)) <= _range);
-                    if (isInRange)
-                    {
-                        if (_cooldown == 0)
-                        {
-                            _gun.Shoot(target);
-                            _cooldown = _cooldownValue;
-                        }
-                        X = prevX;
-                        Y = prevY;
-                    }
-                    return;
-                }
-
-            }
-
-            if (false) { }// rework
-            else
             {
                 if (_team == Team.Red) _targetPoint = Global.bluAncientCoords;
                 else _targetPoint = Global.redAncientCoords;
@@ -123,6 +140,7 @@ namespace New.res.src.unit
 
         public override void Update()
         {
+            
             if (!isInitialized)
             {
                 isInitialized = true;
@@ -130,7 +148,8 @@ namespace New.res.src.unit
                 {
                     case Type.melee:
                         {
-                            _range = 10;
+                            _armor = 1;
+                            _range = 20;
                             _hp = 15;
                             _damage = 4;
                             _gun = new MeleeWeapon(_damage, Game.Scene);
@@ -140,7 +159,8 @@ namespace New.res.src.unit
                         }
                     case Type.range:
                         {
-                            _range = 80;
+                            _armor = 0;
+                            _range = 90;
                             _hp = 10;
                             _damage = 7;
                             _gun = new RangeWeapon(_damage, Game.Scene);
@@ -150,6 +170,7 @@ namespace New.res.src.unit
                         }
                     case Type.siege:
                         {
+                            _armor = 1;
                             _range = 200;
                             _hp = 12;
                             _damage = 11;
@@ -160,6 +181,7 @@ namespace New.res.src.unit
                         }
                     case Type.tower:
                         {
+                            _armor = 5;
                             _range = 100;
                             _hp = 300;
                             _damage = 20;
@@ -170,6 +192,7 @@ namespace New.res.src.unit
                         }
                     case Type.ancient:
                         {
+                            _armor = 10;
                             _range = 140;
                             _hp = 800;
                             _damage = 2;
@@ -188,11 +211,11 @@ namespace New.res.src.unit
 
                 _sprite.CenterOrigin();
                 _collider.CenterOrigin();
+
             }
 
             if (_cooldown > 0) _cooldown--;
 
-            
 
             _gun.Move((int)X, (int)Y);
 

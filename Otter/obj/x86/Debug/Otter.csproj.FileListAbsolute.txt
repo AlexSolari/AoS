@@ -24,3 +24,16 @@ C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Debug\sfmlnet-window-2.dll
 C:\Users\Solari\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.csprojResolveAssemblyReference.cache
 C:\Users\Solari\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.dll
 C:\Users\Solari\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\libsndfile-1.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\openal32.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\csfml-audio-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\csfml-graphics-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\csfml-window-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\Otter.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\Otter.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\sfmlnet-window-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.csprojResolveAssemblyReference.cache
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.dll
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.pdb

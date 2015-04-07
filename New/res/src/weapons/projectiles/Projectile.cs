@@ -24,7 +24,7 @@ namespace New.res.src.weapons.projectiles
             X = x;
             Y = y;
             _direction = new Vector2(target.X - X, target.Y - Y);
-            LifeSpan = 50;
+            //LifeSpan = 70;
         }
 
         public override void Update()
@@ -37,26 +37,10 @@ namespace New.res.src.weapons.projectiles
             X += _direction.X;
             Y += _direction.Y;
 
-            //_collider.X = X;
-            //_collider.Y = Y;
-
-            //_sprite.X = X;
-            //_sprite.Y = Y;
-
-            List<Entity> list;
-            if (_collider.Overlap(X, Y, Tags.unit))
+            if (X == _target.X && Y == _target.Y)
             {
-                list = _collider.CollideEntities(X, Y, Tags.unit);
-                foreach (Unit unit in list)
-                {
-                    if (unit != _target || !_target.alive) continue;
-                    else
-                    {
-                        _target.Damage(_dmg);
-                        RemoveSelf();
-                        break;
-                    }
-                }
+                _target.Damage(_dmg);
+                RemoveSelf();
             }
           base.Update();
         }
