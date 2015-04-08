@@ -8,6 +8,14 @@ using New.res.src.unit;
 
 namespace New.res.src.weapons.projectiles
 {
+    class NoProjectile : Projectile
+    {
+        public NoProjectile(Unit target, int dmg, int X, int Y)
+            : base(target, dmg, X, Y)
+        {
+
+        }
+    }
     class UnvisibleProjectile : Projectile
     {
         public UnvisibleProjectile(Unit target, int dmg, int X, int Y)
@@ -25,7 +33,7 @@ namespace New.res.src.weapons.projectiles
         public SimpleProjectile(Unit target, int dmg, int X, int Y)
             : base(target, dmg, X, Y)
         {
-            _sprite = Image.CreateCircle(1, Color.White);
+            _sprite = Image.CreateCircle(2, Color.Cyan);
             _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
@@ -38,7 +46,7 @@ namespace New.res.src.weapons.projectiles
         public LargeProjectile(Unit target, int dmg, int X, int Y)
             : base(target, dmg, X, Y)
         {
-            _sprite = Image.CreateCircle(2, Color.White);
+            _sprite = Image.CreateCircle(3, Color.Gray);
             _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
@@ -54,7 +62,7 @@ namespace New.res.src.weapons.projectiles
             : base(target, dmg, X, Y)
         {
 
-            _sprite = Image.CreateCircle(0, Color.White);
+            _sprite = Image.CreateCircle(3, Color.Yellow);
             _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 

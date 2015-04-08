@@ -18,8 +18,8 @@ namespace New.res.src.unit
             : base(@"ancient.png", team, position, Type.ancient)
         {
             _creepsCD = 100;
-            _creepsCooldown = 500;
-            _siegeCD = 1600;
+            _creepsCooldown = 700;
+            _siegeCD = _creepsCD + _creepsCooldown * 3;
             _creepCount = 0;
         }
 
@@ -30,10 +30,10 @@ namespace New.res.src.unit
 
                 _armor = 10;
                 _range = 140;
-                _hp = 800;
-                _damage = 2;
-                _gun = new AncientWeapon(_damage, GameScene.Instance);
-                _cooldownValue = 2;
+                _hp = 1000;
+                _damage = 3;
+                _gun = new NoWeapon(GameScene.Instance);
+                _cooldownValue = 5;
                 _speed = 0;
             }
             _creepsCD--;
@@ -65,9 +65,13 @@ namespace New.res.src.unit
                 case 3:
                     if (_siegeCD <= 0)
                     {
-                        GameScene.Instance.Add(new Siege(_team, new Point((int)(X), (int)(Y))));
-                        _siegeCD = 1500;
+                        GameScene.Instance.Add(new Siege(_team, new Point((int)(X + _team * 20), (int)(Y - _team * 20))));
+                        _siegeCD = 3 * _creepsCooldown;
                     }
+                    _creepCount++;
+                    break;
+                case 4:
+                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X), (int)(Y))));
                     _creepCount++;
                     break;
                 default:

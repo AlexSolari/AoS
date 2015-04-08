@@ -9,9 +9,16 @@ namespace New.res.src
 {
     class Background : Entity
     {
+
         public Background()
         {
             SetGraphic(new Image(@"background.png"));
+            Graphic.Blend = BlendMode.Add;
+        }
+
+        public override void Update()
+        {
+            Global.tick++;
         }
     }
 }

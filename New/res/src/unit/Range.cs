@@ -21,11 +21,11 @@ namespace New.res.src.unit
             {
                 _armor = 0;
                 _range = 120;
-                _hp = 10;
+                _hp = 30;
                 _damage = 7;
                 _gun = new RangeWeapon(_damage, GameScene.Instance);
-                _cooldownValue = 40;
-                _speed = 2;
+                _cooldownValue = 60;
+                _speed = 1;
             }
             base.Update();
         }

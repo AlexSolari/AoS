@@ -45,6 +45,8 @@
     <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="res\src\HPBar.cs" />
+    <Compile Include="res\src\Cursor.cs" />
     <Compile Include="res\src\Background.cs" />
     <Compile Include="res\src\unit\Tower.cs" />
     <Compile Include="res\src\unit\Ancient.cs" />

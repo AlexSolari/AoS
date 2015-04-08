@@ -40,16 +40,18 @@ namespace New.res.src.weapons.projectiles
             if (Math.Abs(X - _target.X) <= 10 && Math.Abs(Y - _target.Y) <= 10)
             {
                 _target.Damage(_dmg);
-                if (!_target.isBuilding) Game.Scene.Add(new Particle(X, Y, "blood.png", 6, 6)
-                {                    
-                    LifeSpan = 10,
-                    Angle = 10,
-                    FinalAlpha = 0,
-                    FinalX = X + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
-                    FinalY = Y + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
-                    FinalScaleX = 0.5f,
-                    LockScaleRatio = true
-                });
+                if (!_target.isBuilding)
+                    for (var counter = _dmg; counter > 3; counter-=3 )
+                        Game.Scene.Add(new Particle(X, Y, "blood.png", 6, 6)
+                        {
+                            LifeSpan = 10,
+                            Angle = 10,
+                            FinalAlpha = 0,
+                            FinalX = X + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                            FinalY = Y + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                            FinalScaleX = 0.5f,
+                            LockScaleRatio = true
+                        });
                 RemoveSelf();
             }
           base.Update();

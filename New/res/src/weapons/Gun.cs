@@ -48,6 +48,11 @@ namespace New.res.src
                         projectile = new BuildingProjectile(target, _dmg, X, Y);
                         break;
                     }
+                case ProjectileType.none:
+                    {
+                        projectile = new NoProjectile(target, _dmg, X, Y);
+                        break;
+                    }
                 default:
                     throw new Exception("Unknown weapon type");
             }

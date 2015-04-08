@@ -19,13 +19,7 @@ namespace New.res.src.unit
             GameScene.Instance.RemoveGraphic<Text>(Bar);
             if (_hp > 0)
             {
-                Bar = new Text(16);
-                Bar.SetPosition(X - 16, Y - 60);
-                Bar.String = ((int)_hp).ToString();
-                if (_team == Team.Blu) Bar.Color = Color.Green;
-                else Bar.Color = Color.Red;
-                Bar.Render();
-                GameScene.Instance.AddGraphics(Bar);
+                GameScene.Instance.Add(new HPBar(X, Y, _hp, _team, 1));
             }
             base.Update();
         }

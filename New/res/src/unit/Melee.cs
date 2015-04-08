@@ -20,11 +20,11 @@ namespace New.res.src.unit
             {
                 _armor = 1;
                 _range = 30;
-                _hp = 15;
+                _hp = 50;
                 _damage = 4;
                 _gun = new MeleeWeapon(_damage, GameScene.Instance);
-                _cooldownValue = 20;
-                _speed = 2;
+                _cooldownValue = 40;
+                _speed = 1;
             }
             base.Update();
         }

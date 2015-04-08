@@ -31,8 +31,10 @@ namespace New
             Add(new Ancient(Team.Blu, Global.bluAncientCoords));
             Add(new Ancient(Team.Red, Global.redAncientCoords));
 
-            Add(new Tower(Team.Blu, new Point(450, 550)));
-            Add(new Tower(Team.Red, new Point(350, 250)));
+            Add(new Tower(Team.Blu, new Point(465, 550)));
+            Add(new Tower(Team.Red, new Point(335, 250)));
+
+            Add(new Cursor());
         }
     }
 }

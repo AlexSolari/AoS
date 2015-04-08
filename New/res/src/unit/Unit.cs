@@ -115,6 +115,8 @@ namespace New.res.src.unit
 
             if (_idleTimer<=0 && !isBuilding)
             {
+                if (_type == Type.siege) _idleTimer = 2;
+
                 _direction.X = _targetPoint.X - X;
                 _direction.Y = _targetPoint.Y - Y;
 
@@ -130,9 +132,19 @@ namespace New.res.src.unit
             }
         }
 
+        protected void PreventOutOfBorders()
+        {
+            while (X + COLLISION_RADIUS > Borders.Left) X--;
+            while (X - COLLISION_RADIUS < Borders.Right) X++;
+            while (Y + COLLISION_RADIUS > Borders.Bottom) Y--;
+            while (X - COLLISION_RADIUS < Borders.Top) Y++;
+        }
         protected void PreventCollisions()
         {
-            if (_type == Type.siege || _type == Type.ancient) return;
+            if (_type == Type.tower || _type == Type.ancient) return;
+
+            PreventOutOfBorders();
+
             List<Entity> Units = new List<Entity>();
             
             foreach (Unit unit in Teams.bluTeam) Units.Add(unit);
@@ -145,11 +157,12 @@ namespace New.res.src.unit
                 if (Distance <= COLLISION_RADIUS)
                 {
                     var randomDirection = new Vector2();
-                    randomDirection.X = 1 + target.X - X;
-                    randomDirection.Y = 1 + target.Y - Y;
+                    var randomShift = GoodRnd.gen.Next(-5, 5);
+                    randomDirection.X = target.X - X + randomShift;
+                    randomDirection.Y = target.Y - Y + randomShift;
                     randomDirection *= -1;
 
-                    Global.ReduceVector(ref randomDirection, 1);
+                    Global.ReduceVector(ref randomDirection, 5);
 
                     while (Distance <= COLLISION_RADIUS)
                     {
@@ -175,7 +188,6 @@ namespace New.res.src.unit
 
                 _sprite.CenterOrigin();
                 _collider.CenterOrigin();
-
             }
 
             if (_cooldown > 0) _cooldown--;

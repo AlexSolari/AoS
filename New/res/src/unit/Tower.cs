@@ -19,9 +19,9 @@ namespace New.res.src.unit
         {
             if (!isInitialized)
             {
-                _armor = 5;
+                _armor = 10;
                 _range = 150;
-                _hp = 300;
+                _hp = 600;
                 _damage = 20;
                 _gun = new TowerWeapon(_damage, GameScene.Instance);
                 _cooldownValue = 40;

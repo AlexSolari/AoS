@@ -7,6 +7,13 @@ using Otter;
 
 namespace New
 {
+    static class Borders
+    {
+        public const int Left = 573;
+        public const int Right = 226;
+        public const int Top = 0;
+        public const int Bottom = 800;
+    }
     static class Teams
     {
         static public List<Entity> redTeam = new List<Entity>();
@@ -17,6 +24,7 @@ namespace New
         public const float damageReducingCoefficient = 0.9f;
 
         public static Session playerOne;
+        public static int tick = 0;
         public const int Width = 800;
         public const int Height = 800;
 
@@ -68,6 +76,7 @@ namespace New
         public const int large = 1;
         public const int building = 2;
         public const int unvisible = 3;
+        public const int none = 4;
     }
     
 }

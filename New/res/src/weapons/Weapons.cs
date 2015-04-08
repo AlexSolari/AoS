@@ -31,4 +31,9 @@ namespace New.res.src
     {
         public AncientWeapon(int dmg, Scene parent) : base(ProjectileType.building, dmg, parent) { }
     }
+
+    class NoWeapon : Gun
+    {
+        public NoWeapon(Scene parent) : base(ProjectileType.none, 0, parent) { }
+    }
 }
