@@ -22,7 +22,7 @@ namespace New.res.src.unit
             if (_hp > 0)
             {
                 Bar = new Text(8);
-                Bar.SetPosition(X - 5, Y - 20);
+                Bar.SetPosition(X - 5, Y - 30);
                 Bar.String = ((int)_hp).ToString();
                 if (_team == Team.Blu) Bar.Color = Color.Green;
                 else Bar.Color = Color.Red;

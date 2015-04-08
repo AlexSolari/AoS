@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Otter;
 using New.res.src.unit;
-
+using New.res.src;
 
 namespace New
 {
@@ -16,16 +16,23 @@ namespace New
         {
             return gen.Next(2);
         }
+
+        static public double NextFloatBin()
+        {
+            return gen.NextDouble();
+        }
     }
     class GameScene : Scene
     {
         public GameScene()
         {
+            Add(new Background());
+
             Add(new Ancient(Team.Blu, Global.bluAncientCoords));
             Add(new Ancient(Team.Red, Global.redAncientCoords));
 
-            Add(new Tower(Team.Blu, new Point(325, 575)));
-            Add(new Tower(Team.Red, new Point(425, 225)));
+            Add(new Tower(Team.Blu, new Point(450, 550)));
+            Add(new Tower(Team.Red, new Point(350, 250)));
         }
     }
 }

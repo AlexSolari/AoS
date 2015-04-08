@@ -51,15 +51,15 @@ namespace New.res.src.unit
             switch (_creepCount)
             {
                 case 0:
-                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X - 20), (int)(Y + _team * 10))));
+                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X - 20 * GoodRnd.NextFloatBin()), (int)(Y + _team * 10))));
                     _creepCount++;
                     break;
                 case 1:
-                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X + 20 ), (int)(Y + _team * 10))));
+                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X + 20 * GoodRnd.NextFloatBin()), (int)(Y + _team * 10))));
                     _creepCount++;
                     break;
                 case 2:
-                    GameScene.Instance.Add(new Range(_team, new Point((int)(X), (int)(Y - _team * 30))));
+                    GameScene.Instance.Add(new Range(_team, new Point((int)(X), (int)(Y - _team * 10))));
                     _creepCount++;
                     break;
                 case 3:

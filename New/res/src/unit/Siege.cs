@@ -19,7 +19,7 @@ namespace New.res.src.unit
         {
             if (!isInitialized)
             {
-                _armor = 1;
+                _armor = 3;
                 _range = 200;
                 _hp = 12;
                 _damage = 11;

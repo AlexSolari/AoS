@@ -20,7 +20,7 @@ namespace New.res.src.unit
             if (!isInitialized)
             {
                 _armor = 0;
-                _range = 90;
+                _range = 120;
                 _hp = 10;
                 _damage = 7;
                 _gun = new RangeWeapon(_damage, GameScene.Instance);

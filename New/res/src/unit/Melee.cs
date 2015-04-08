@@ -19,7 +19,7 @@ namespace New.res.src.unit
             if (!isInitialized)
             {
                 _armor = 1;
-                _range = 10;
+                _range = 30;
                 _hp = 15;
                 _damage = 4;
                 _gun = new MeleeWeapon(_damage, GameScene.Instance);
