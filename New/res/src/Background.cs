@@ -9,7 +9,7 @@ namespace New.res.src
 {
     static class Bot
     {
-        private static int _nextUpgrade = Upgades.Armor;
+        private static int _nextUpgrade = GoodRnd.gen.Next(0, 3);
         public static void Update()
         {
             switch (_nextUpgrade)
@@ -60,32 +60,42 @@ namespace New.res.src
             if (Game.Input.MouseX > Buttons.BluHP.X &&
                 Game.Input.MouseX < Buttons.BluHP.X + Buttons.BluHP.Graphic.Width &&
                 Game.Input.MouseY > Buttons.BluHP.Y &&
-                Game.Input.MouseY < Buttons.BluHP.Y + Buttons.BluHP.Graphic.Height &&
-                Teams.playerBlue.coins >= 5)
+                Game.Input.MouseY < Buttons.BluHP.Y + Buttons.BluHP.Graphic.Height)
             {
-                Teams.playerBlue.SpendCoin(5);
-                Teams.playerBlue.Upgrade(Upgades.HP);
-                Console.WriteLine("BLU: Upgraded HP");
+                if (Teams.playerBlue.coins >= 5)
+                {
+                    Teams.playerBlue.SpendCoin(5);
+                    Teams.playerBlue.Upgrade(Upgades.HP);
+                    Console.WriteLine("BLU: Upgraded HP");
+                }
+                else Global.needGold.Play();
+                
             }
             if (Game.Input.MouseX > Buttons.BluArmor.X &&
                 Game.Input.MouseX < Buttons.BluArmor.X + Buttons.BluArmor.Graphic.Width &&
                 Game.Input.MouseY > Buttons.BluArmor.Y &&
-                Game.Input.MouseY < Buttons.BluArmor.Y + Buttons.BluArmor.Graphic.Height && 
-                Teams.playerBlue.coins >= 10)
+                Game.Input.MouseY < Buttons.BluArmor.Y + Buttons.BluArmor.Graphic.Height)
             {
-                Teams.playerBlue.SpendCoin(10);
-                Teams.playerBlue.Upgrade(Upgades.Armor);
-                Console.WriteLine("BLU: Upgraded Armor");
+                if (Teams.playerBlue.coins >= 10)
+                {
+                    Teams.playerBlue.SpendCoin(10);
+                    Teams.playerBlue.Upgrade(Upgades.Armor);
+                    Console.WriteLine("BLU: Upgraded Armor");
+                }
+                else Global.needGold.Play();
             }
             if (Game.Input.MouseX > Buttons.BluDamage.X &&
                 Game.Input.MouseX < Buttons.BluDamage.X + Buttons.BluDamage.Graphic.Width &&
                 Game.Input.MouseY > Buttons.BluDamage.Y &&
-                Game.Input.MouseY < Buttons.BluDamage.Y + Buttons.BluDamage.Graphic.Height &&
-                Teams.playerBlue.coins >= 3)
+                Game.Input.MouseY < Buttons.BluDamage.Y + Buttons.BluDamage.Graphic.Height)
             {
-                Teams.playerBlue.SpendCoin(3);
-                Teams.playerBlue.Upgrade(Upgades.Damage);
-                Console.WriteLine("BLU: Upgraded Damage");
+                if (Teams.playerBlue.coins >= 3)
+                {
+                    Teams.playerBlue.SpendCoin(3);
+                    Teams.playerBlue.Upgrade(Upgades.Damage);
+                    Console.WriteLine("BLU: Upgraded Damage");
+                }
+                else Global.needGold.Play();
             }
         }
 
@@ -93,7 +103,7 @@ namespace New.res.src
         {
             Bot.Update();
             _clickCooldown--;
-            if (_clickCooldown<=0 && Global.playerOne.Controller.A.Down)
+            if (_clickCooldown <= 0 && Global.playerOne.Controller.A.Down)
             {
                 _clickCooldown = 30;
                 checkForBlueButtons();

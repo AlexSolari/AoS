@@ -37,7 +37,7 @@ namespace New.res.src.player
                     _bonusArmor++;
                     break;
                 case Upgades.Damage:
-                    _bonusDamage++;
+                    _bonusDamage+=2;
                     break;
                 case Upgades.HP:
                     _bonusHP+=5;

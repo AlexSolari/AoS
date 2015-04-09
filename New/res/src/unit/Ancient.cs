@@ -23,6 +23,31 @@ namespace New.res.src.unit
             _creepCount = 0;
         }
 
+        public override void Damage(int damagePure)
+        {
+            base.Damage(damagePure);
+            if (!alive)
+            {
+                Game.Scene.RemoveAll();
+                var tmp = new Text(30);
+                tmp.Y = tmp.X = Game.HalfWidth;
+                tmp.OutlineColor = Color.Black;
+                tmp.OutlineThickness = 2;
+                if (_team == Team.Blu)
+                {
+                    tmp.String = "YOU LOSE";
+                    tmp.Color = Color.Red;
+                    
+                }
+                else
+                {
+                    tmp.String = "YOU WIN";
+                    tmp.Color = Color.Green;
+                }
+                tmp.CenterOrigin();
+                Game.Scene.AddGraphic(tmp);
+            }
+        }
         public override void Update()
         {
             if (!isInitialized)

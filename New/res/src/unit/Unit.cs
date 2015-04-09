@@ -57,7 +57,7 @@ namespace New.res.src.unit
             else _targetPoint = Global.redAncientCoords;
         }
 
-        public void Damage(int damagePure)
+        public virtual void Damage(int damagePure)
         {
             var damageDealt = Convert.ToInt32(Math.Round(damagePure * Math.Pow(Global.damageReducingCoefficient, _armor), MidpointRounding.ToEven) - GoodRnd.gen.Next(-1,1));
 
@@ -89,7 +89,7 @@ namespace New.res.src.unit
                 { 
                     Teams.redTeam.Remove(this);
                     Teams.playerBlue.AddCoin();
-                    
+                    GameScene.Instance.Add(new Label(X, Y - Graphic.HalfHeight, "+1", Color.Gold, 40, true, 10));
                 }
                 else 
                 {

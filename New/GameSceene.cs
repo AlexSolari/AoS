@@ -26,11 +26,15 @@ namespace New
     {
         public GameScene()
         {
-            //Music sound = new Music("music/loop.ogg", true);
+            
+            Global.loop.Volume = 0.2f;
+            Global.needGold.Volume = 0.5f;
 
-            //sound.Play();
+            Global.loop.Play();
 
             Add(new Background());
+
+            Add(new Label(5, 780, "TIP: You are controlling bottom (blue) castle.", Color.White, 1000));
 
             Buttons.BluHP = Add(new Control(@"ui/buttonHP.png", 633, 129));
             Buttons.BluArmor = Add(new Control(@"ui/buttonArmor.png", 633, 196));

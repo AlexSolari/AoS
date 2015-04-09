@@ -40,7 +40,10 @@ namespace New
     }
     class Global
     {
-        public const float damageReducingCoefficient = 0.9f;
+        public static Music loop = new Music("music/loop.ogg", true);
+        public static Sound needGold = new Sound("music/needGold.ogg", false);
+
+        public const float damageReducingCoefficient = 0.89f;
 
         public static Session playerOne;
         public static int tick = 0;
