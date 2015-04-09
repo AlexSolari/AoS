@@ -14,6 +14,17 @@ namespace New.res.src.player
         public int _bonusArmor = -1;
         public int _bonusHP = 0;
 
+        private int _coins = 0;
+
+        public int coins
+        {
+            get { return _coins;  }
+        }
+
+        public void AddCoin() { _coins++; }
+
+        public void SpendCoin(int value) { _coins-= value; }
+
         public Player(int team)
         {
             _team = team;

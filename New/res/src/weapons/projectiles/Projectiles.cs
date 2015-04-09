@@ -33,7 +33,7 @@ namespace New.res.src.weapons.projectiles
         public SimpleProjectile(Unit target, int dmg, int X, int Y)
             : base(target, dmg, X, Y)
         {
-            _sprite = Image.CreateCircle(2, Color.Cyan);
+            _sprite = Image.CreateCircle(2, Color.Green);
             _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 

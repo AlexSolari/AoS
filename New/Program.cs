@@ -15,7 +15,7 @@ namespace New
 
             //Global.playerOne.Controller.R1.AddKey(Key.W);
             //Global.playerOne.Controller.R2.AddKey(Key.S);
-            Global.playerOne.Controller.A.AddKey(Key.Space);
+            Global.playerOne.Controller.A.AddMouseButton(MouseButton.Left);
 
             game.FirstScene = new GameScene();
 

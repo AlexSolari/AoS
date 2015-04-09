@@ -5,9 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Otter;
 using New.res.src.player;
+using New.res.src;
 
 namespace New
 {
+    static class Buttons
+    {
+        public static Control BluHP;
+        public static Control BluArmor;
+        public static Control BluDamage;
+        public static Control RedHP;
+        public static Control RedArmor;
+        public static Control RedDamage;
+    }
     static class Upgades
     {
         public const int HP = 0;

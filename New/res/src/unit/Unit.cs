@@ -33,6 +33,7 @@ namespace New.res.src.unit
         protected Point _targetPoint;
 
         protected bool isInitialized = false;
+        protected bool isAlive = true;
 
         public Unit(string spritePath, int team, Point position, int type)
         {
@@ -62,24 +63,45 @@ namespace New.res.src.unit
 
             _hp = _hp - damageDealt;
 
-#if DEBUG
-            Console.WriteLine("Damage:");
-            Console.WriteLine("\tPure: {0}", damagePure);
-            Console.WriteLine("\tDealt: {0}", damageDealt);
-            Console.WriteLine("\tArmor coeff: {0}", Math.Pow(Global.damageReducingCoefficient, _armor));
-#endif
-            if (_hp <= 0)
+//#if DEBUG
+//            Console.WriteLine("Damage:");
+//            Console.WriteLine("\tPure: {0}", damagePure);
+//            Console.WriteLine("\tDealt: {0}", damageDealt);
+//            Console.WriteLine("\tArmor coeff: {0}", Math.Pow(Global.damageReducingCoefficient, _armor));
+//#endif
+            if (_hp <= 0 && alive)
             {
+                isAlive = false;
                 GameScene.Instance.RemoveGraphic(Bar);
                 RemoveSelf();
-                if (_team == Team.Red) Teams.redTeam.Remove(this);
-                else Teams.bluTeam.Remove(this);
+                for (var i = 0; i < 20; i++)
+                    GameScene.Instance.Add(new Particle(X, Y, "blood.png", 4, 4)
+                    {
+                        LifeSpan = 50,
+                        Angle = 10,
+                        FinalAlpha = 0,
+                        FinalX = X + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                        FinalY = Y + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                        FinalScaleX = 0.5f,
+                        LockScaleRatio = true
+                    });
+                if (_team == Team.Red) 
+                { 
+                    Teams.redTeam.Remove(this);
+                    Teams.playerBlue.AddCoin();
+                    
+                }
+                else 
+                {
+                    Teams.bluTeam.Remove(this);
+                    Teams.playerRed.AddCoin();
+                }
             }
         }
 
         public bool alive
         {
-            get { return _hp > 0; }
+            get { return isAlive; }
         }
 
         protected void AITick()
@@ -132,10 +154,13 @@ namespace New.res.src.unit
 
         protected void PreventOutOfBorders()
         {
-            while (X + COLLISION_RADIUS > Borders.Left) X--;
-            while (X - COLLISION_RADIUS < Borders.Right) X++;
-            while (Y + COLLISION_RADIUS > Borders.Bottom) Y--;
-            while (X - COLLISION_RADIUS < Borders.Top) Y++;
+            if( (X + COLLISION_RADIUS > Borders.Left) ||
+                (X - COLLISION_RADIUS < Borders.Right) ||
+                (Y + COLLISION_RADIUS > Borders.Bottom) ||
+                (X - COLLISION_RADIUS < Borders.Top) )
+            {
+                RemoveSelf();
+            }
         }
         protected void PreventCollisions()
         {
@@ -162,15 +187,21 @@ namespace New.res.src.unit
 
                     Global.ReduceVector(ref randomDirection, Convert.ToSingle(Distance)/4);
 
-                    if (Distance < 0.01f)
-                    {
-                        randomDirection.X = 1;
-                        randomDirection.Y = 1;
-                    }
+                    
                     while (Distance <= COLLISION_RADIUS)
                     {
+                        if (Distance < 0.01f)
+                        {
+                            randomDirection.X = 1;
+                            randomDirection.Y = 1;
+                        }
                         X += randomDirection.X;
                         Y += randomDirection.Y;
+                        if (!target.isBuilding) 
+                        { 
+                            target.X -= randomDirection.X/2;
+                            target.Y -= randomDirection.Y/2;
+                        }
                         Distance = (Math.Sqrt(Math.Pow(X - target.X, 2) + Math.Pow(Y - target.Y, 2)));
                     }
                 }

@@ -31,7 +31,7 @@ namespace New.res.src
             ((Text)Graphic).OutlineColor = Color.Black;
             ((Text)Graphic).OutlineThickness = 2;
             ((Text)Graphic).String = ((int)_hp).ToString();
-            if (_team == Team.Blu) ((Text)Graphic).Color = Color.Green;
+            if (_team == Team.Blu) ((Text)Graphic).Color = Color.Cyan;
             else ((Text)Graphic).Color = Color.Red;
 
         }
