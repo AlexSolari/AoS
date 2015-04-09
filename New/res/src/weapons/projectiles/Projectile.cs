@@ -36,12 +36,15 @@ namespace New.res.src.weapons.projectiles
 
             X += _direction.X;
             Y += _direction.Y;
-
+            var numberOfSplashes = 0;
             if (Math.Abs(X - _target.X) <= 10 && Math.Abs(Y - _target.Y) <= 10)
             {
                 _target.Damage(_dmg);
                 if (!_target.isBuilding)
-                    for (var counter = _dmg; counter > 3; counter-=3 )
+                    for (var counter = _dmg; counter > 3; counter -= 3)
+                    {
+                        numberOfSplashes++;
+                        if (numberOfSplashes > 20) break;
                         Game.Scene.Add(new Particle(X, Y, "blood.png", 6, 6)
                         {
                             LifeSpan = 10,
@@ -52,6 +55,7 @@ namespace New.res.src.weapons.projectiles
                             FinalScaleX = 0.5f,
                             LockScaleRatio = true
                         });
+                    }
                 RemoveSelf();
             }
           base.Update();

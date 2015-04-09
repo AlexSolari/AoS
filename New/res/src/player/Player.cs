@@ -29,7 +29,7 @@ namespace New.res.src.player
                     _bonusDamage++;
                     break;
                 case Upgades.HP:
-                    _bonusHP++;
+                    _bonusHP+=5;
                     break;
                 default:
                     break;

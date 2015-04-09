@@ -20,6 +20,8 @@ namespace New.res.src
         {
             if (Global.playerOne.Controller.A.Down)
             {
+
+                Teams.playerRed.Upgrade(Upgades.HP);
                 Teams.playerBlue.Upgrade(Upgades.Damage);
             }
             Global.tick++;

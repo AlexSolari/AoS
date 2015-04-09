@@ -26,6 +26,10 @@ namespace New
     {
         public GameScene()
         {
+            //Music sound = new Music("music/loop.ogg", true);
+
+            //sound.Play();
+
             Add(new Background());
 
             Add(new Ancient(Team.Blu, Global.bluAncientCoords));
