@@ -19,8 +19,7 @@ namespace New.res.src
         public Scene _parent;
         public Gun(int type, int dmg, Scene parent) { _projectileType = type; _dmg = dmg; X = 0; Y = 0; _parent = parent; }
 
-
-
+        public void setDmg(int dmg) { _dmg = dmg; }
         public void Move(int x, int y) {X = x; Y = y;}
 
         public void Shoot(Unit target)

@@ -18,6 +18,10 @@ namespace New.res.src
 
         public override void Update()
         {
+            if (Global.playerOne.Controller.A.Down)
+            {
+                Teams.playerBlue.Upgrade(Upgades.Damage);
+            }
             Global.tick++;
         }
     }

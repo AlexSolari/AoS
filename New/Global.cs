@@ -4,9 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Otter;
+using New.res.src.player;
 
 namespace New
 {
+    static class Upgades
+    {
+        public const int HP = 0;
+        public const int Armor = 1;
+        public const int Damage = 2;
+    }
     static class Borders
     {
         public const int Left = 573;
@@ -17,6 +24,8 @@ namespace New
     static class Teams
     {
         static public List<Entity> redTeam = new List<Entity>();
+        public static Player playerRed = new Player(Team.Red);
+        public static Player playerBlue = new Player(Team.Blu);
         static public List<Entity> bluTeam = new List<Entity>();
     }
     class Global

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Otter;
+using New.res.src.player;
 
 namespace New.res.src.unit
 {
@@ -36,12 +37,9 @@ namespace New.res.src.unit
         public Unit(string spritePath, int team, Point position, int type)
         {
             _handle = GoodRnd.gen.Next(Int32.MinValue, Int32.MaxValue);
-            if (type == Type.siege)
-            {
-                if (team == Team.Red) _sprite = new Image(@"siegeRed.png");
-                else _sprite = new Image(@"siegeBlu.png");
-            }
-            else _sprite = new Image(spritePath);
+             if (team == Team.Red) spritePath = @"red/" + spritePath;
+             else spritePath = @"blu/" + spritePath; ;
+            _sprite = new Image(spritePath);
             Bar = new Text(16);
 
             _team = team;
@@ -68,7 +66,7 @@ namespace New.res.src.unit
             Console.WriteLine("Damage:");
             Console.WriteLine("\tPure: {0}", damagePure);
             Console.WriteLine("\tDealt: {0}", damageDealt);
-            Console.WriteLine("\tArmor coeff: {0}", Math.Pow(Global.damageReducingCoefficient, _armor), MidpointRounding.ToEven);
+            Console.WriteLine("\tArmor coeff: {0}", Math.Pow(Global.damageReducingCoefficient, _armor));
 #endif
             if (_hp <= 0)
             {
@@ -141,7 +139,7 @@ namespace New.res.src.unit
         }
         protected void PreventCollisions()
         {
-            if (_type == Type.tower || _type == Type.ancient) return;
+            if (isBuilding) return;
 
             PreventOutOfBorders();
 
@@ -158,12 +156,17 @@ namespace New.res.src.unit
                 {
                     var randomDirection = new Vector2();
                     var randomShift = GoodRnd.gen.Next(-5, 5);
-                    randomDirection.X = target.X - X + randomShift;
-                    randomDirection.Y = target.Y - Y + randomShift;
+                    randomDirection.X = target.X - X + randomShift * (float)Math.Sin(Global.GetAngle(randomDirection, new Vector2(0, _team)) * 180 / 3.14);
+                    randomDirection.Y = target.Y - Y + randomShift * (float)Math.Cos(Global.GetAngle(randomDirection, new Vector2(0, _team)) * 180 / 3.14);
                     randomDirection *= -1;
 
-                    Global.ReduceVector(ref randomDirection, 5);
+                    Global.ReduceVector(ref randomDirection, Convert.ToSingle(Distance)/4);
 
+                    if (Distance < 0.01f)
+                    {
+                        randomDirection.X = 1;
+                        randomDirection.Y = 1;
+                    }
                     while (Distance <= COLLISION_RADIUS)
                     {
                         X += randomDirection.X;
@@ -188,6 +191,17 @@ namespace New.res.src.unit
 
                 _sprite.CenterOrigin();
                 _collider.CenterOrigin();
+
+                Player owner;
+                if (_team == Team.Blu)
+                {
+                    owner =  Teams.playerBlue;
+                } else owner =  Teams.playerRed;
+
+                _hp += owner._bonusHP;
+                _armor += owner._bonusArmor;
+                _damage += owner._bonusDamage;
+                _gun.setDmg(_damage);
             }
 
             if (_cooldown > 0) _cooldown--;

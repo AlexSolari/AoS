@@ -37,3 +37,5 @@ C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\sfmlnet-window-2.dll
 C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.csprojResolveAssemblyReference.cache
 C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.dll
 C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Debug\Otter.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\Otter.dll.CodeAnalysisLog.xml
+C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Debug\Otter.dll.lastcodeanalysissucceeded

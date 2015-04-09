@@ -1,0 +1,15 @@
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\test.exe.config
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\libsndfile-1.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\openal32.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\csfml-audio-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\csfml-graphics-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\csfml-window-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\test.exe
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\test.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\Otter.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\sfmlnet-window-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\test\bin\Debug\Otter.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\test\obj\Debug\test.exe
+C:\Users\Cheese\Documents\GitHub\AoS\test\obj\Debug\test.pdb

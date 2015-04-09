@@ -48,6 +48,7 @@
     <Compile Include="res\src\HPBar.cs" />
     <Compile Include="res\src\Cursor.cs" />
     <Compile Include="res\src\Background.cs" />
+    <Compile Include="res\src\player\Player.cs" />
     <Compile Include="res\src\unit\Tower.cs" />
     <Compile Include="res\src\unit\Ancient.cs" />
     <Compile Include="res\src\unit\Building.cs" />
