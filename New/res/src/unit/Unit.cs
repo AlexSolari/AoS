@@ -59,7 +59,7 @@ namespace New.res.src.unit
 
         public virtual void Damage(int damagePure)
         {
-            var damageDealt = Convert.ToInt32(Math.Round(damagePure * Math.Pow(Global.damageReducingCoefficient, _armor), MidpointRounding.ToEven) - GoodRnd.gen.Next(-1,1));
+            var damageDealt = Convert.ToInt32(Math.Round(damagePure * Math.Pow(Global.damageReducingCoefficient, _armor * Global.armorMultifier), MidpointRounding.ToEven) - GoodRnd.gen.Next(-1, 1));
 
             _hp = _hp - damageDealt;
 

@@ -44,6 +44,7 @@ namespace New
         public static Sound needGold = new Sound("music/needGold.ogg", false);
 
         public const float damageReducingCoefficient = 0.89f;
+        public const float armorMultifier = 1.2f;
 
         public static Session playerOne;
         public static int tick = 0;
