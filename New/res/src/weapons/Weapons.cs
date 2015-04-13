@@ -27,9 +27,9 @@ namespace New.res.src
         public TowerWeapon(int dmg, Scene parent) : base(ProjectileType.building, dmg, parent) { }
     }
 
-    class AncientWeapon : Gun
+    class DragonWeapon : Gun
     {
-        public AncientWeapon(int dmg, Scene parent) : base(ProjectileType.building, dmg, parent) { }
+        public DragonWeapon(int dmg, Scene parent) : base(ProjectileType.dragon, dmg, parent) { }
     }
 
     class NoWeapon : Gun

@@ -52,6 +52,11 @@ namespace New.res.src
                         projectile = new NoProjectile(target, _dmg, X, Y);
                         break;
                     }
+                case ProjectileType.dragon:
+                    {
+                        projectile = new DragonProjectile(target, _dmg, X, Y);
+                        break;
+                    }
                 default:
                     throw new Exception("Unknown weapon type");
             }

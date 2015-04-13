@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Otter;
 using New.res.src.player;
 using New.res.src;
+using New.res.src.unit;
 
 namespace New
 {
@@ -17,6 +18,8 @@ namespace New
         public static Control RedHP;
         public static Control RedArmor;
         public static Control RedDamage;
+        public static Control RedDragon;
+        public static Control BlueDragon;
     }
     static class Upgades
     {
@@ -33,6 +36,8 @@ namespace New
     }
     static class Teams
     {
+        static public Unit bluTower;
+        static public Unit redTower;
         static public List<Entity> redTeam = new List<Entity>();
         public static Player playerRed = new Player(Team.Red);
         public static Player playerBlue = new Player(Team.Blu);
@@ -91,6 +96,7 @@ namespace New
         public const int siege = 2;
         public const int tower = 3;
         public const int ancient = 4;
+        public const int dragonHero = 5;
     }
 
     static class ProjectileType
@@ -100,6 +106,7 @@ namespace New
         public const int building = 2;
         public const int unvisible = 3;
         public const int none = 4;
+        public const int dragon = 5;
     }
     
 }
