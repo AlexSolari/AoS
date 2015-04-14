@@ -28,7 +28,7 @@ namespace New.res.src.unit
                 _hp = 500;
                 _damage = 50;
                 _gun = new NoWeapon(GameScene.Instance);
-                _cooldownValue = 20;
+                _cooldownValue = 10;
                 _speed = 2;
             }
             if (_cooldown <= 0)
@@ -37,7 +37,6 @@ namespace New.res.src.unit
                 _cooldown = _cooldownValue;
             }
             base.Update();
-            _cooldown--;
         }
     }
 }

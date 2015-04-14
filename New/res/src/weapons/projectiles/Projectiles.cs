@@ -99,7 +99,7 @@ namespace New.res.src.weapons.projectiles
             : base(target, dmg, X, Y)
         {
 
-            _sprite = Image.CreateCircle(2, Color.Red);
+            _sprite = Image.CreateCircle(0, Color.Red);
             _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
@@ -112,17 +112,56 @@ namespace New.res.src.weapons.projectiles
             _tickCounter += GoodRnd.NextBin();
             if (_target.alive)
             {
-                Game.Scene.Add(new Particle(X, Y, "fire.png", 4, 4)
-                {
-                    LifeSpan = 10,
-                    Angle = GoodRnd.gen.Next(-360, 360),
-                    FinalAlpha = 0,
-                    FinalX = X + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
-                    FinalY = Y + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
-                    FinalAngle = GoodRnd.gen.Next(-360,360),
-                    FinalScaleX = 0.5f,
-                    LockScaleRatio = true
-                });
+                for (var counter = 0; counter < 3; counter++ )
+                    Game.Scene.Add(new Particle(X, Y, "fire.png", 4, 4)
+                    {
+                        LifeSpan = 10,
+                        Angle = GoodRnd.gen.Next(-360, 360),
+                        FinalAlpha = 0,
+                        FinalX = X + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                        FinalY = Y + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                        FinalAngle = GoodRnd.gen.Next(-360, 360),
+                        FinalScaleX = 0.5f,
+                        LockScaleRatio = true
+                    });
+            }
+
+            base.Update();
+        }
+    }
+
+    class PriestProjectile : Projectile
+    {
+        private int _tickCounter = 0;
+        public PriestProjectile(Unit target, int dmg, int X, int Y)
+            : base(target, dmg, X, Y)
+        {
+
+            _sprite = Image.CreateCircle(0, Color.Red);
+            _collider = new PointCollider(X, Y, Tags.projetile);
+            _speed = 10;
+
+            SetGraphic(_sprite);
+            SetCollider(_collider);
+        }
+
+        public override void Update()
+        {
+            _tickCounter += GoodRnd.NextBin();
+            if (_target.alive)
+            {
+                for (var counter = 0; counter <5; counter++)
+                    Game.Scene.Add(new Particle(X, Y, "star.png", 4, 4)
+                    {
+                        LifeSpan = 10,
+                        Angle = GoodRnd.gen.Next(-360, 360),
+                        FinalAlpha = 0,
+                        FinalX = X + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                        FinalY = Y + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                        FinalAngle = GoodRnd.gen.Next(-360, 360),
+                        FinalScaleX = 0.5f,
+                        LockScaleRatio = true
+                    });
             }
 
             base.Update();

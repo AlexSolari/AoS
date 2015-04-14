@@ -58,6 +58,7 @@ namespace New
                 {
                     Teams.playerBlue.SpendCoin(3);
                     Teams.playerBlue.Upgrade(Upgades.Damage);
+                    Teams.bluTower.UpgradeDamage();
                     Console.WriteLine("BLU: Upgraded Damage");
                 }
                 else Global.needGold.Play();
@@ -72,7 +73,7 @@ namespace New
                     Teams.playerBlue.SpendCoin(50);
                 }
                 else Global.needGold.Play();
-                
+                GameScene.Instance.Add(new Priest(Team.Blu, Global.bluAncientCoords));
             };
 
             Buttons.RedHP = Add(new Control(@"ui/buttonHP.png", 40, 129));
@@ -95,7 +96,6 @@ namespace New
         }
         public GameScene()
         {
-            
             Global.loop.Volume = 0.2f;
             Global.needGold.Volume = 0.5f;
 

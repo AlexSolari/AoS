@@ -22,6 +22,7 @@ namespace New.res.src.unit
         protected Collider _collider;
         protected int _team;
         protected int _hp;
+        protected int _maxhp;
         protected int _armor;
         protected int _damage;
         protected int _idleTimer = 0;
@@ -64,6 +65,16 @@ namespace New.res.src.unit
         public void UpgradeArmor()
         {
             _armor++;
+        }
+
+        public virtual void UpgradeDamage()
+        {
+            _damage+=2;
+        }
+
+        public void UpgradeHP()
+        {
+            _hp += 5;
         }
 
         public virtual void Damage(int damagePure)
@@ -178,7 +189,9 @@ namespace New.res.src.unit
 
                 Global.ReduceVector(ref _direction, _speed);
 
-                X += Convert.ToInt32(_direction.X);
+                var randomShift = 2 * (float)(GoodRnd.gen.NextDouble() - 0.5f);
+
+                X += Convert.ToInt32(_direction.X) + randomShift;
                 Y += Convert.ToInt32(_direction.Y);
             }
             if (Math.Abs(X - _targetPoint.X) <= Math.Sqrt(_range) && Math.Abs(Y - _targetPoint.Y) <= Math.Sqrt(_range))
@@ -236,7 +249,7 @@ namespace New.res.src.unit
                     
                     while (Distance <= COLLISION_RADIUS)
                     {
-                        if (Distance < 0.01f)
+                        if (Distance < 1 || randomDirection.X == 0 || randomDirection.Y == 0)
                         {
                             randomDirection.X = 1;
                             randomDirection.Y = 1;
@@ -254,6 +267,12 @@ namespace New.res.src.unit
             }
         }
 
+        public void Heal(int value)
+        {
+            if (_hp == _maxhp) return;
+            _hp += _maxhp * value/100;
+            if (_hp > _maxhp) _hp = _maxhp;
+        }
         public bool isBuilding { get { return (_type == Type.tower || _type == Type.ancient); } }
         public override void Update()
         {
@@ -279,6 +298,8 @@ namespace New.res.src.unit
                 _armor += owner._bonusArmor;
                 _damage += owner._bonusDamage;
                 _gun.setDmg(_damage);
+
+                _maxhp = _hp;
             }
 
             if (_cooldown > 0) _cooldown--;

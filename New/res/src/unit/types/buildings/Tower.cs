@@ -29,5 +29,11 @@ namespace New.res.src.unit
             }
             base.Update();
         }
+
+        public override void UpgradeDamage()
+        {
+            _damage += 5;
+            _gun = new TowerWeapon(_damage, GameScene.Instance); 
+        }
     }
 }

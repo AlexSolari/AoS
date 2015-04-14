@@ -57,6 +57,11 @@ namespace New.res.src
                         projectile = new DragonProjectile(target, _dmg, X, Y);
                         break;
                     }
+                case ProjectileType.priest:
+                    {
+                        projectile = new PriestProjectile(target, _dmg, X, Y);
+                        break;
+                    }
                 default:
                     throw new Exception("Unknown weapon type");
             }

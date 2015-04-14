@@ -17,11 +17,13 @@ namespace New.res.src.unit
         public override void Update()
         {
             GameScene.Instance.RemoveGraphic<Text>(Bar);
-            if (_hp > 0)
+            if (_hp > 0 && Global.tick % Global.HPBarsUpdateRate == 0)
             {
                 GameScene.Instance.Add(new HPBar(X, Y, _hp, _team, 1));
             }
             base.Update();
         }
+
+        
     }
 }
