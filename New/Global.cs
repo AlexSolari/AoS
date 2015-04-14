@@ -36,8 +36,8 @@ namespace New
     }
     static class Teams
     {
-        static public Unit bluTower;
-        static public Unit redTower;
+        static public Tower bluTower;
+        static public Tower redTower;
         static public List<Entity> redTeam = new List<Entity>();
         public static Player playerRed = new Player(Team.Red);
         public static Player playerBlue = new Player(Team.Blu);
@@ -45,6 +45,7 @@ namespace New
     }
     class Global
     {
+        public const int HPBarsUpdateRate = 2; //less = highter update rate
         public static Music loop = new Music("music/loop.ogg", true);
         public static Sound needGold = new Sound("music/needGold.ogg", false);
 
@@ -97,6 +98,7 @@ namespace New
         public const int tower = 3;
         public const int ancient = 4;
         public const int dragonHero = 5;
+        public const int priestHero = 6;
     }
 
     static class ProjectileType
@@ -107,6 +109,7 @@ namespace New
         public const int unvisible = 3;
         public const int none = 4;
         public const int dragon = 5;
+        public const int priest = 6;
     }
     
 }

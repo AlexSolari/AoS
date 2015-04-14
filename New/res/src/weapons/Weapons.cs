@@ -32,6 +32,11 @@ namespace New.res.src
         public DragonWeapon(int dmg, Scene parent) : base(ProjectileType.dragon, dmg, parent) { }
     }
 
+    class PriestWeapon : Gun
+    {
+        public PriestWeapon(int dmg, Scene parent) : base(ProjectileType.priest, dmg, parent) { }
+    }
+
     class NoWeapon : Gun
     {
         public NoWeapon(Scene parent) : base(ProjectileType.none, 0, parent) { }

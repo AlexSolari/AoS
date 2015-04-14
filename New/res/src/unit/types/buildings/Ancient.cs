@@ -18,7 +18,7 @@ namespace New.res.src.unit
             : base(@"ancient.png", team, position, Type.ancient)
         {
             _creepsCD = 100;
-            _creepsCooldown = 700;
+            _creepsCooldown = 60;
             _siegeCD = _creepsCD + _creepsCooldown * 3;
             _creepCount = 0;
         }
@@ -44,6 +44,7 @@ namespace New.res.src.unit
                     tmp.String = "YOU WIN";
                     tmp.Color = Color.Green;
                 }
+                Game.Scene.Add(new Cursor());
                 tmp.CenterOrigin();
                 Game.Scene.AddGraphic(tmp);
             }

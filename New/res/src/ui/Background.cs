@@ -22,6 +22,7 @@ namespace New.res.src
                         Teams.playerRed.Upgrade(_nextUpgrade);
                         _nextUpgrade = GoodRnd.gen.Next(0, 3);
                         Console.WriteLine("RED: Upgraded Damage");
+                        Teams.redTower.UpgradeDamage();
                     }
                     break;
                 case Upgades.Armor:

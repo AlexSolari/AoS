@@ -58,6 +58,7 @@
     <Compile Include="res\src\ui\Background.cs" />
     <Compile Include="res\src\player\Player.cs" />
     <Compile Include="res\src\unit\classes\Hero.cs" />
+    <Compile Include="res\src\unit\types\heroes\Priest.cs" />
     <Compile Include="res\src\unit\types\heroes\Dragon.cs" />
     <Compile Include="res\src\unit\types\buildings\Tower.cs" />
     <Compile Include="res\src\unit\types\buildings\Ancient.cs" />

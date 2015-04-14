@@ -19,11 +19,17 @@ namespace New.res.src
                 Y = y - 30;
                 SetGraphic(new Text(10));
             }
-            else
+            else if (type == 1)
             {
                 X = x - 16;
                 Y = y - 60;
                 SetGraphic(new Text(16));
+            }
+            else
+            {
+                X = x - 10;
+                Y = y - 40;
+                SetGraphic(new Text(14));
             }
             _hp = hp;
             _team = team;
@@ -33,13 +39,12 @@ namespace New.res.src
             ((Text)Graphic).String = ((int)_hp).ToString();
             if (_team == Team.Blu) ((Text)Graphic).Color = Color.Cyan;
             else ((Text)Graphic).Color = Color.Red;
-
+            LifeSpan = Global.HPBarsUpdateRate;
         }
 
 
         public override void Update()
         {
-            RemoveSelf();
         }
     }
 }

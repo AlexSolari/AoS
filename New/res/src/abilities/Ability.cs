@@ -54,6 +54,33 @@ namespace New.res.src.abilities
                     }
                     break;
                 case AbilityList.HealingAura:
+                    {
+                        List<Entity> ownTeam;
+                        if (_owner.team != Team.Red) ownTeam = Teams.bluTeam;
+                        else ownTeam = Teams.redTeam;
+
+                        foreach (Unit target in ownTeam)
+                        {
+                            //if (target.type == Type.dragonHero) continue;
+                            double Distance = (Math.Sqrt(Math.Pow(_owner.Xcoord - target.X, 2) + Math.Pow(_owner.Ycoord - target.Y, 2)));
+                            if (!target.isBuilding && Distance <= _range)
+                            {
+                                target.Heal(5);
+                                for (var counter = 0; counter < 12; counter++)
+                                    GameScene.Instance.Add(new Particle(target.X, target.Y, "star.png", 4, 4)
+                                    {
+                                        LifeSpan = 10,
+                                        Angle = GoodRnd.gen.Next(-360, 360),
+                                        FinalAlpha = 0,
+                                        FinalX = target.X + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                                        FinalY = target.Y + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                                        FinalAngle = GoodRnd.gen.Next(-360, 360),
+                                        FinalScaleX = 0.5f,
+                                        LockScaleRatio = true
+                                    });
+                            }
+                        }
+                    }
                     break;
                 case AbilityList.Vampirism:
                     break;
