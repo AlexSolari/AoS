@@ -26,7 +26,7 @@ namespace New.res.src
             if (_cooldown == 0)
             {
                 RemoveSelf();
-                Game.Scene.Add(new Cursor());
+                GameScene.Instance.Add(new Cursor());
             }
         }
     }

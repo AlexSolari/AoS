@@ -18,7 +18,7 @@ namespace New.res.src.unit
             : base(@"ancient.png", team, position, Type.ancient)
         {
             _creepsCD = 100;
-            _creepsCooldown = 60;
+            _creepsCooldown = 600;
             _siegeCD = _creepsCD + _creepsCooldown * 3;
             _creepCount = 0;
         }
@@ -30,7 +30,8 @@ namespace New.res.src.unit
             {
                 Game.Scene.RemoveAll();
                 var tmp = new Text(30);
-                tmp.Y = tmp.X = Game.HalfWidth;
+                tmp.Y = 300;
+                tmp.X = Game.HalfWidth;
                 tmp.OutlineColor = Color.Black;
                 tmp.OutlineThickness = 2;
                 if (_team == Team.Blu)
@@ -47,6 +48,12 @@ namespace New.res.src.unit
                 Game.Scene.Add(new Cursor());
                 tmp.CenterOrigin();
                 Game.Scene.AddGraphic(tmp);
+                var exit = new Control("ui/buttonExit.png", Game.HalfWidth - 65, 400);
+                exit.onClick = delegate()
+                {
+                    System.Environment.Exit(0);
+                };
+                Game.Scene.Add(exit);
             }
         }
         public override void Update()

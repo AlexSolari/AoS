@@ -44,7 +44,6 @@ namespace New.res.src.abilities
 
                         foreach (Unit target in enemyTeam)
                         {
-                            //if (target.type == Type.dragonHero) continue;
                             double Distance = (Math.Sqrt(Math.Pow(_owner.Xcoord - target.X, 2) + Math.Pow(_owner.Ycoord - target.Y, 2)));
                             if (Distance <= _range)
                             {
@@ -61,7 +60,6 @@ namespace New.res.src.abilities
 
                         foreach (Unit target in ownTeam)
                         {
-                            //if (target.type == Type.dragonHero) continue;
                             double Distance = (Math.Sqrt(Math.Pow(_owner.Xcoord - target.X, 2) + Math.Pow(_owner.Ycoord - target.Y, 2)));
                             if (!target.isBuilding && Distance <= _range)
                             {
@@ -72,8 +70,8 @@ namespace New.res.src.abilities
                                         LifeSpan = 10,
                                         Angle = GoodRnd.gen.Next(-360, 360),
                                         FinalAlpha = 0,
-                                        FinalX = target.X + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
-                                        FinalY = target.Y + GoodRnd.gen.Next(-20, 20) * (float)GoodRnd.gen.NextDouble(),
+                                        FinalX = target.X + GoodRnd.gen.Next(-50, 50) * (float)GoodRnd.gen.NextDouble(),
+                                        FinalY = target.Y + GoodRnd.gen.Next(-50, 50) * (float)GoodRnd.gen.NextDouble(),
                                         FinalAngle = GoodRnd.gen.Next(-360, 360),
                                         FinalScaleX = 0.5f,
                                         LockScaleRatio = true

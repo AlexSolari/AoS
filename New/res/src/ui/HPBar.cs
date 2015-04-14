@@ -41,10 +41,5 @@ namespace New.res.src
             else ((Text)Graphic).Color = Color.Red;
             LifeSpan = Global.HPBarsUpdateRate;
         }
-
-
-        public override void Update()
-        {
-        }
     }
 }

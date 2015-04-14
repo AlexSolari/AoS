@@ -45,7 +45,7 @@ namespace New.res.src.weapons.projectiles
                     {
                         numberOfSplashes++;
                         if (numberOfSplashes > 20) break;
-                        Game.Scene.Add(new Particle(X, Y, "blood.png", 6, 6)
+                        GameScene.Instance.Add(new Particle(X, Y, "blood.png", 6, 6)
                         {
                             LifeSpan = 10,
                             Angle = 10,
