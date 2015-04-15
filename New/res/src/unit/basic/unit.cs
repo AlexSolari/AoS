@@ -12,7 +12,7 @@ namespace New.res.src.unit
     {
         
 
-        public const int COLLISION_RADIUS = 21;
+        public const int COLLISION_RADIUS = 25;
         public const int TARGETING_RADIUS = 150;
 
         protected int _handle;
@@ -48,8 +48,6 @@ namespace New.res.src.unit
             Bar = new Text(16);
 
             _team = team;
-            if (_team == Team.Red) Teams.redTeam.Add(this);
-            else Teams.bluTeam.Add(this);
             X = position.X;
             Y = position.Y;
 
@@ -57,9 +55,17 @@ namespace New.res.src.unit
 
             _direction = new Vector2(0);
 
-            if (_team == Team.Red) _targetPoint = new Point(Global.bluAncientCoords.X, 900);
-            else _targetPoint = new Point(Global.redAncientCoords.X, -100);
-            
+            if (_team == Team.Red)
+            {
+                Teams.redTeam.Add(this);
+                _targetPoint = new Point(Global.bluAncientCoords.X, 900);
+            }
+            else
+            {
+                StatisticWatcher.trackUnitsProduced(1);
+                Teams.bluTeam.Add(this);
+                _targetPoint = new Point(Global.redAncientCoords.X, -100);
+            }            
         }
 
         public void UpgradeArmor()
@@ -80,7 +86,7 @@ namespace New.res.src.unit
         public virtual void Damage(int damagePure)
         {
             var damageDealt = Convert.ToInt32(Math.Round(damagePure * Math.Pow(Global.damageReducingCoefficient, _armor * Global.armorMultifier), MidpointRounding.ToEven) - GoodRnd.gen.Next(-1, 1));
-
+            if (_team == Team.Blu) StatisticWatcher.trackDamageDone(damageDealt);
             _hp = _hp - damageDealt;
 
 //#if DEBUG
@@ -106,7 +112,9 @@ namespace New.res.src.unit
                         LockScaleRatio = true
                     });
                 if (_team == Team.Red) 
-                { 
+                {
+                    StatisticWatcher.trackUnitsKilled(1);
+                    StatisticWatcher.trackCoins(1);
                     Teams.redTeam.Remove(this);
                     Teams.redTeam.TrimExcess();
                     Teams.playerBlue.AddCoin();
@@ -270,8 +278,10 @@ namespace New.res.src.unit
         public void Heal(int value)
         {
             if (_hp == _maxhp) return;
+            var prevHP = _hp;
             _hp += _maxhp * value/100;
             if (_hp > _maxhp) _hp = _maxhp;
+            if (_team == Team.Blu) StatisticWatcher.trackHealthHealed(_hp - prevHP);
         }
         public bool isBuilding { get { return (_type == Type.tower || _type == Type.ancient); } }
         public override void Update()

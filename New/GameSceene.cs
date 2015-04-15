@@ -73,13 +73,24 @@ namespace New
                     Teams.playerBlue.SpendCoin(50);
                 }
                 else Global.needGold.Play();
-                GameScene.Instance.Add(new Priest(Team.Blu, Global.bluAncientCoords));
+            };
+            Buttons.BluePriest = Add(new Control(@"ui/summonPriest.png", 633, 556));
+            Buttons.BluePriest.onClick = delegate()
+            {
+                if (Teams.playerBlue.coins >= 15)
+                {
+                    GameScene.Instance.Add(new Priest(Team.Blu, Global.bluAncientCoords));
+                    Console.WriteLine("BLU: Hired Priest");
+                    Teams.playerBlue.SpendCoin(15);
+                }
+                else Global.needGold.Play();
             };
 
             Buttons.RedHP = Add(new Control(@"ui/buttonHP.png", 40, 129));
             Buttons.RedArmor = Add(new Control(@"ui/buttonArmor.png", 40, 196));
             Buttons.RedDamage = Add(new Control(@"ui/buttonDamage.png", 40, 258));
             Buttons.RedDragon = Add(new Control(@"ui/summonDragon.png", 37, 476));
+            Buttons.RedPriest = Add(new Control(@"ui/summonPriest.png", 37, 556));
 
             Add(new CoinCounter(700, 70, Team.Blu));
             Add(new CoinCounter(110, 70, Team.Red));

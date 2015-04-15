@@ -75,7 +75,7 @@ namespace New.res.src.weapons.projectiles
             _tickCounter += GoodRnd.NextBin();
             if (_tickCounter % 2 == 0 && _target.alive)
             {
-                Game.Scene.Add(new Particle(X, Y, "star.png", 4, 4)
+                GameScene.Instance.Add(new Particle(X, Y, "star.png", 4, 4)
                 {
                     LifeSpan = 10,
                     Angle = 10,
@@ -113,7 +113,7 @@ namespace New.res.src.weapons.projectiles
             if (_target.alive)
             {
                 for (var counter = 0; counter < 3; counter++ )
-                    Game.Scene.Add(new Particle(X, Y, "fire.png", 4, 4)
+                    GameScene.Instance.Add(new Particle(X, Y, "fire.png", 4, 4)
                     {
                         LifeSpan = 10,
                         Angle = GoodRnd.gen.Next(-360, 360),
@@ -151,7 +151,7 @@ namespace New.res.src.weapons.projectiles
             if (_target.alive)
             {
                 for (var counter = 0; counter <5; counter++)
-                    Game.Scene.Add(new Particle(X, Y, "star.png", 4, 4)
+                    GameScene.Instance.Add(new Particle(X, Y, "star.png", 4, 4)
                     {
                         LifeSpan = 10,
                         Angle = GoodRnd.gen.Next(-360, 360),

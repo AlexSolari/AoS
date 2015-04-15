@@ -61,6 +61,7 @@ namespace New.res.src
             Bot.Update();
             if (Global.tick++ % 500 == 0)
             {
+                StatisticWatcher.trackCoins(1);
                 Teams.playerBlue.AddCoin();
                 Teams.playerRed.AddCoin();
             }

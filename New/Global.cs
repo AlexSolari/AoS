@@ -10,16 +10,60 @@ using New.res.src.unit;
 
 namespace New
 {
+    static class StatisticWatcher
+    {
+        private static int _coinsEarned = 0;
+        private static int _unitsProduced = 0;
+        private static int _unitsKilled = 0;
+        private static int _damageDone = 0;
+        private static int _healthHealed = 0;
+        public static int coinsEarned
+        {
+            get { return _coinsEarned; }
+        }
+        public static int unitsProduced
+        {
+            get { return _unitsProduced; }
+        }
+        public static int unitsKilled
+        {
+            get { return _unitsKilled; }
+        }
+        public static int damageDone
+        {
+            get { return _damageDone; }
+        }
+        public static int healthHealed
+        {
+            get { return _healthHealed; }
+        }
+        public static void trackCoins(int value) { _coinsEarned += value; }
+        public static void trackUnitsProduced(int value) { _unitsProduced += value; }
+        public static void trackUnitsKilled(int value) { _unitsKilled += value; }
+        public static void trackDamageDone(int value) { _damageDone += value; }
+        public static void trackHealthHealed(int value) { _healthHealed += value; }
+        public static int totalPoints
+        {
+            get
+            {
+                var rank = Convert.ToInt32(_damageDone / _unitsProduced + (_healthHealed*10)/_unitsProduced + _coinsEarned + _unitsKilled);
+                return rank;
+            }
+        }
+    }
     static class Buttons
     {
         public static Control BluHP;
         public static Control BluArmor;
         public static Control BluDamage;
+        public static Control BlueDragon;
+        public static Control BluePriest;
+
         public static Control RedHP;
         public static Control RedArmor;
         public static Control RedDamage;
         public static Control RedDragon;
-        public static Control BlueDragon;
+        public static Control RedPriest;
     }
     static class Upgades
     {

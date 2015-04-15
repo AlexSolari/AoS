@@ -23,38 +23,60 @@ namespace New.res.src.unit
             _creepCount = 0;
         }
 
+        private void showResults()
+        {
+            var entities = GameScene.Instance.GetEntities<Entity>();
+
+            foreach(Entity obj in entities)
+            {
+                if (obj != this)
+                    obj.RemoveSelf();
+            }
+
+            var tmp = new Text(30);
+            tmp.Y = 200;
+            tmp.X = Game.HalfWidth;
+            tmp.OutlineColor = Color.Black;
+            tmp.OutlineThickness = 2;
+            if (_team == Team.Blu)
+            {
+                tmp.String = "YOU LOSE";
+                tmp.Color = Color.Red;
+
+            }
+            else
+            {
+                tmp.String = "YOU WIN";
+                tmp.Color = Color.Green;
+            }
+            GameScene.Instance.Add(new Cursor());
+            tmp.CenterOrigin();
+            GameScene.Instance.AddGraphic(tmp);
+            var exit = new Control("ui/buttonExit.png", Game.HalfWidth - 65, 600);
+            exit.onClick = delegate()
+            {
+                System.Environment.Exit(0);
+            };
+            GameScene.Instance.Add(exit);
+            var listResults = new List<Label>();
+            listResults.Add(new Label(Game.HalfHeight, 250, "Units produced: " + StatisticWatcher.unitsProduced.ToString(), Color.White));
+            listResults.Add(new Label(Game.HalfHeight, 300, "Units killed: " + StatisticWatcher.unitsKilled.ToString(), Color.White));
+            listResults.Add(new Label(Game.HalfHeight, 350, "Damage done: " + StatisticWatcher.damageDone.ToString(), Color.White));
+            listResults.Add(new Label(Game.HalfHeight, 400, "Coins earned: " + StatisticWatcher.coinsEarned.ToString(), Color.White));
+            listResults.Add(new Label(Game.HalfHeight, 450, "HP healed: " + StatisticWatcher.healthHealed.ToString(), Color.White));
+            listResults.Add(new Label(Game.HalfHeight, 500, "------------------", Color.White));
+            listResults.Add(new Label(Game.HalfHeight, 550, "Total points: " + StatisticWatcher.totalPoints.ToString(), Color.Cyan));
+            foreach (Label label in listResults)
+            {
+                label.Graphic.CenterOrigin();
+                GameScene.Instance.Add(label);
+            }
+        }
         public override void Damage(int damagePure)
         {
             base.Damage(damagePure);
             if (!alive)
-            {
-                Game.Scene.RemoveAll();
-                var tmp = new Text(30);
-                tmp.Y = 300;
-                tmp.X = Game.HalfWidth;
-                tmp.OutlineColor = Color.Black;
-                tmp.OutlineThickness = 2;
-                if (_team == Team.Blu)
-                {
-                    tmp.String = "YOU LOSE";
-                    tmp.Color = Color.Red;
-                    
-                }
-                else
-                {
-                    tmp.String = "YOU WIN";
-                    tmp.Color = Color.Green;
-                }
-                Game.Scene.Add(new Cursor());
-                tmp.CenterOrigin();
-                Game.Scene.AddGraphic(tmp);
-                var exit = new Control("ui/buttonExit.png", Game.HalfWidth - 65, 400);
-                exit.onClick = delegate()
-                {
-                    System.Environment.Exit(0);
-                };
-                Game.Scene.Add(exit);
-            }
+                showResults();
         }
         public override void Update()
         {
