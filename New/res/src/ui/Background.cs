@@ -59,6 +59,10 @@ namespace New.res.src
         public override void Update()
         {
             Bot.Update();
+            if (Global.tick % 100 == 0)
+            {
+                StatisticWatcher.trackPoints(Global.tick);
+            }
             if (Global.tick++ % 500 == 0)
             {
                 StatisticWatcher.trackCoins(1);

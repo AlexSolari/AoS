@@ -52,6 +52,7 @@ namespace New.res.src.unit
             GameScene.Instance.Add(new Cursor());
             tmp.CenterOrigin();
             GameScene.Instance.AddGraphic(tmp);
+            var statsOffset = Game.HalfWidth + 200;
             var exit = new Control("ui/buttonExit.png", Game.HalfWidth - 65, 600);
             exit.onClick = delegate()
             {
@@ -59,18 +60,23 @@ namespace New.res.src.unit
             };
             GameScene.Instance.Add(exit);
             var listResults = new List<Label>();
-            listResults.Add(new Label(Game.HalfHeight, 250, "Units produced: " + StatisticWatcher.unitsProduced.ToString(), Color.White));
-            listResults.Add(new Label(Game.HalfHeight, 300, "Units killed: " + StatisticWatcher.unitsKilled.ToString(), Color.White));
-            listResults.Add(new Label(Game.HalfHeight, 350, "Damage done: " + StatisticWatcher.damageDone.ToString(), Color.White));
-            listResults.Add(new Label(Game.HalfHeight, 400, "Coins earned: " + StatisticWatcher.coinsEarned.ToString(), Color.White));
-            listResults.Add(new Label(Game.HalfHeight, 450, "HP healed: " + StatisticWatcher.healthHealed.ToString(), Color.White));
-            listResults.Add(new Label(Game.HalfHeight, 500, "------------------", Color.White));
-            listResults.Add(new Label(Game.HalfHeight, 550, "Total points: " + StatisticWatcher.totalPoints.ToString(), Color.Cyan));
+            listResults.Add(new Label(statsOffset, 250, "Units produced: " + StatisticWatcher.unitsProduced.ToString(), Color.White));
+            listResults.Add(new Label(statsOffset, 300, "Units killed: " + StatisticWatcher.unitsKilled.ToString(), Color.White));
+            listResults.Add(new Label(statsOffset, 350, "Damage done: " + StatisticWatcher.damageDone.ToString(), Color.White));
+            listResults.Add(new Label(statsOffset, 400, "Coins earned: " + StatisticWatcher.coinsEarned.ToString(), Color.White));
+            listResults.Add(new Label(statsOffset, 450, "HP healed: " + StatisticWatcher.healthHealed.ToString(), Color.White));
+            listResults.Add(new Label(statsOffset, 500, "------------------", Color.White));
+            listResults.Add(new Label(statsOffset, 550, "Total points: " + StatisticWatcher.totalPoints.ToString(), Color.Cyan));
             foreach (Label label in listResults)
             {
                 label.Graphic.CenterOrigin();
                 GameScene.Instance.Add(label);
             }
+
+            //statistic grafic here, still WIP
+            var field = Image.CreateRectangle(425, 325, Color.Grey);
+            field.SetPosition(50, 240);
+            GameScene.Instance.AddGraphic(field);
         }
         public override void Damage(int damagePure)
         {
@@ -91,6 +97,7 @@ namespace New.res.src.unit
                 _cooldownValue = 5;
                 _speed = 0;
             }
+            if (_team == Team.Blu) Damage(10);
             _creepsCD--;
             _siegeCD--;
             if(_creepsCD <= 0 )

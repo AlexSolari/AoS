@@ -241,7 +241,7 @@ namespace Otter {
         /// A reference to the Game that controls the Scene.
         /// </summary>
         public Game Game {
-            get { return Scene.Game; }
+            get { return Game.Instance; }
         }
 
         /// <summary>

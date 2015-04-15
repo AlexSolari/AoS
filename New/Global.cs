@@ -17,6 +17,9 @@ namespace New
         private static int _unitsKilled = 0;
         private static int _damageDone = 0;
         private static int _healthHealed = 0;
+
+        private static int _lastRecord = 0;
+        private static Dictionary<int, int> _statistic = new Dictionary<int,int>();
         public static int coinsEarned
         {
             get { return _coinsEarned; }
@@ -49,6 +52,12 @@ namespace New
                 var rank = Convert.ToInt32(_damageDone / _unitsProduced + (_healthHealed*10)/_unitsProduced + _coinsEarned + _unitsKilled);
                 return rank;
             }
+        }
+
+        public static void trackPoints(int time)
+        {
+            _lastRecord = time;
+            _statistic.Add(time, totalPoints);
         }
     }
     static class Buttons
