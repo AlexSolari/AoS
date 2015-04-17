@@ -12,6 +12,8 @@ namespace New
 {
     static class StatisticWatcher
     {
+        public const int updatePeriod = 100;
+
         private static int _coinsEarned = 0;
         private static int _unitsProduced = 0;
         private static int _unitsKilled = 0;
@@ -19,7 +21,12 @@ namespace New
         private static int _healthHealed = 0;
 
         private static int _lastRecord = 0;
+        private static int _maxPoints = 0;
         private static Dictionary<int, int> _statistic = new Dictionary<int,int>();
+        public static Dictionary<int, int> statistic
+        {
+            get { return _statistic; }
+        }
         public static int coinsEarned
         {
             get { return _coinsEarned; }
@@ -53,9 +60,17 @@ namespace New
                 return rank;
             }
         }
-
+        public static int lastRecord
+        {
+            get { return _lastRecord; }
+        }
+        public static int maxPoints
+        {
+            get { return _maxPoints; }
+        }
         public static void trackPoints(int time)
         {
+            if (_maxPoints < totalPoints) _maxPoints = totalPoints;
             _lastRecord = time;
             _statistic.Add(time, totalPoints);
         }

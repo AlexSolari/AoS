@@ -74,9 +74,34 @@ namespace New.res.src.unit
             }
 
             //statistic grafic here, still WIP
-            var field = Image.CreateRectangle(425, 325, Color.Grey);
+
+
+            float scaleX = (float)425 / (float)StatisticWatcher.statistic.Count;
+            float scaleY = (float)325 / (float)StatisticWatcher.maxPoints;
+            Point graphStart = new Point(50, 565);
+            Console.WriteLine("Scale: {0}; {1}", scaleX, scaleY);
+            var startValue = 0;
+            Image field = null;
+            if (scaleX < 1)
+            {
+                field = Image.CreateRectangle(425, 325, Color.Mix(Color.Gray, Color.Black));
+                scaleX = 1;
+                startValue = StatisticWatcher.lastRecord - 425 * StatisticWatcher.updatePeriod;
+            }
+            else
+            {
+                field = Image.CreateRectangle(425, 325, Color.Mix(Color.Gray, Color.Black));
+            }
+
             field.SetPosition(50, 240);
             GameScene.Instance.AddGraphic(field);
+
+            for (var time = startValue; time <= StatisticWatcher.lastRecord; time += StatisticWatcher.updatePeriod)
+            {
+                var temp = Image.CreateRectangle((int)scaleX, (int)((StatisticWatcher.statistic[time]) * scaleY), Color.Cyan);
+                temp.SetPosition(graphStart.X + (float)Math.Round(scaleX, 2) * time / StatisticWatcher.updatePeriod, graphStart.Y - StatisticWatcher.statistic[time] * scaleY);
+                GameScene.Instance.AddGraphic(temp);
+            }
         }
         public override void Damage(int damagePure)
         {
@@ -97,7 +122,6 @@ namespace New.res.src.unit
                 _cooldownValue = 5;
                 _speed = 0;
             }
-            if (_team == Team.Blu) Damage(10);
             _creepsCD--;
             _siegeCD--;
             if(_creepsCD <= 0 )

@@ -59,7 +59,7 @@ namespace New.res.src
         public override void Update()
         {
             Bot.Update();
-            if (Global.tick % 100 == 0)
+            if (Global.tick % StatisticWatcher.updatePeriod == 0)
             {
                 StatisticWatcher.trackPoints(Global.tick);
             }
