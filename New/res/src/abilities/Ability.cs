@@ -64,7 +64,7 @@ namespace New.res.src.abilities
                             if (!target.isBuilding && Distance <= _range)
                             {
                                 target.Heal(5);
-                                for (var counter = 0; counter < 12; counter++)
+                                for (var counter = 0; counter < 4; counter++)
                                     GameScene.Instance.Add(new Particle(target.X, target.Y, "star.png", 4, 4)
                                     {
                                         LifeSpan = 10,

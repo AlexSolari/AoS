@@ -18,7 +18,7 @@ namespace New.res.src.unit
         public override void Update()
         {
             
-            _heroPassive = new Ability(AbilityList.HealingAura, false, 200, this);
+            _heroPassive = new Ability(AbilityList.HealingAura, false, 110, this);
             if (!isInitialized)
             {
                 _armor = 5;

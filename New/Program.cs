@@ -8,7 +8,7 @@ namespace New
 {
     class Program
     {
-        public static Game game = new Game("Game", Global.Width, Global.Height);
+        public static Game game = new Game("Castle War", Global.Width, Global.Height);
         static void Main(string[] args)
         {           
             Global.playerOne = game.AddSession("P1");

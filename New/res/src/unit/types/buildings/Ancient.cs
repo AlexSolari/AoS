@@ -20,7 +20,7 @@ namespace New.res.src.unit
         {
             _creepsCD = 100;
             _creepsCooldown = 200;
-            _siegeCD = _creepsCD + _creepsCooldown * 3;
+            _siegeCD = _creepsCD + _creepsCooldown * 5;
             _creepCount = 0;
         }
 
