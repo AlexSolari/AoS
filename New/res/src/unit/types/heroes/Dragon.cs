@@ -26,7 +26,7 @@ namespace New.res.src.unit
                 _armor = 9999;
                 _range = 0;
                 _hp = 500;
-                _damage = 50;
+                _damage = 35;
                 _gun = new NoWeapon(GameScene.Instance);
                 _cooldownValue = 10;
                 _speed = 2;

@@ -24,6 +24,43 @@ namespace New
     }
     class GameScene : Scene
     {
+        public void showMenu()
+        {
+            Global.loop.Volume = 0.2f;
+            Global.needGold.Volume = 0.5f;
+
+            Global.loop.Play();
+
+            Add(new Background(@"backgroundMenu.png", false));
+            Add(new Cursor());
+            var tmp = new Control(@"ui/buttonStart.png", 350, 300);
+            tmp.onClick = delegate()
+            {
+                GameScene.Instance.RemoveAll();
+                startGame();
+            };
+            Add(tmp);
+            tmp = new Control(@"ui/buttonExit.png", 350, 375);
+            tmp.onClick = delegate()
+            {
+                Environment.Exit(0);
+            };
+            Add(tmp);
+        }
+        public void startGame()
+        {
+            
+
+            Add(new Background(@"background.png"));
+
+            AddUI();
+
+            Add(new Ancient(Team.Blu, Global.bluAncientCoords));
+            Add(new Ancient(Team.Red, Global.redAncientCoords));
+
+            Teams.bluTower = Add(new Tower(Team.Blu, new Point(465, 550)));
+            Teams.redTower = Add(new Tower(Team.Red, new Point(335, 250)));
+        }
         private void AddUI()
         {
             Add(new Label(5, 780, "TIP: You are controlling bottom (blue) castle.", Color.White, 1000));
@@ -107,22 +144,8 @@ namespace New
         }
         public GameScene()
         {
-            Global.loop.Volume = 0.2f;
-            Global.needGold.Volume = 0.5f;
-
-            Global.loop.Play();
-
-            Add(new Background());
-
-            AddUI();          
-
-            Add(new Ancient(Team.Blu, Global.bluAncientCoords));
-            Add(new Ancient(Team.Red, Global.redAncientCoords));
-
-            Teams.bluTower = Add(new Tower(Team.Blu, new Point(465, 550)));
-            Teams.redTower = Add(new Tower(Team.Red, new Point(335, 250)));
-
-            
+            showMenu();
+            //startGame();
         }
     }
 }

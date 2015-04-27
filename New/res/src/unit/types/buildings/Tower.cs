@@ -24,7 +24,7 @@ namespace New.res.src.unit
                 _hp = 600;
                 _damage = 20;
                 _gun = new TowerWeapon(_damage, GameScene.Instance);
-                _cooldownValue = 40;
+                _cooldownValue = 10;
                 _speed = 0;
             }
             base.Update();

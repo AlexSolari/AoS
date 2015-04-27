@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace New.res.src.unit
             : base(@"ancient.png", team, position, Type.ancient)
         {
             _creepsCD = 100;
-            _creepsCooldown = 600;
+            _creepsCooldown = 200;
             _siegeCD = _creepsCD + _creepsCooldown * 3;
             _creepCount = 0;
         }
@@ -71,6 +72,11 @@ namespace New.res.src.unit
             {
                 label.Graphic.CenterOrigin();
                 GameScene.Instance.Add(label);
+            }
+
+            using(var stream = new StreamWriter("results.dat",true))
+            {
+                stream.WriteLine(Environment.UserName + ':' + StatisticWatcher.totalPoints.ToString());
             }
 
             //statistic grafic here, still WIP

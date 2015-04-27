@@ -51,24 +51,30 @@ namespace New.res.src
     }
     class Background : Entity
     {
-        public Background()
+        private bool gameStarted;
+        public Background(string sprite, bool mode = true)
         {
-            SetGraphic(new Image(@"background.png"));
+            SetGraphic(new Image(sprite));
             Graphic.Blend = BlendMode.Add;
+            gameStarted = mode;
         }
         public override void Update()
         {
-            Bot.Update();
-            if (Global.tick % StatisticWatcher.updatePeriod == 0)
+            if (gameStarted)
             {
-                StatisticWatcher.trackPoints(Global.tick);
+                Bot.Update();
+                if (Global.tick % StatisticWatcher.updatePeriod == 0)
+                {
+                    StatisticWatcher.trackPoints(Global.tick);
+                }
+                if (Global.tick++ % 500 == 0)
+                {
+                    StatisticWatcher.trackCoins(1);
+                    Teams.playerBlue.AddCoin();
+                    Teams.playerRed.AddCoin();
+                }
             }
-            if (Global.tick++ % 500 == 0)
-            {
-                StatisticWatcher.trackCoins(1);
-                Teams.playerBlue.AddCoin();
-                Teams.playerRed.AddCoin();
-            }
+            
         }
     }
 }
