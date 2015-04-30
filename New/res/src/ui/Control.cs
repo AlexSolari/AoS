@@ -10,7 +10,7 @@ namespace New.res.src
     delegate void ClickAction();
     class Control : Entity
     {
-        private int _clickCooldown;
+        private int _clickCooldown = 30;
         public ClickAction onClick = delegate() { };    
         public Control(string path, float x, float y)
         {

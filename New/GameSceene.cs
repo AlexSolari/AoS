@@ -26,11 +26,6 @@ namespace New
     {
         public void showMenu()
         {
-            Global.loop.Volume = 0.2f;
-            Global.needGold.Volume = 0.5f;
-
-            Global.loop.Play();
-
             Add(new Background(@"backgroundMenu.png", false));
             Add(new Cursor());
             var tmp = new Control(@"ui/buttonStart.png", 350, 300);
@@ -40,16 +35,59 @@ namespace New
                 startGame();
             };
             Add(tmp);
-            tmp = new Control(@"ui/buttonExit.png", 350, 375);
+            tmp = new Control(@"ui/buttonResults.png", 350, 375);
+            tmp.onClick = delegate()
+            {
+                GameScene.Instance.RemoveAll();
+                showResults();
+            };
+            Add(tmp);
+            tmp = new Control(@"ui/buttonExit.png", 350, 455);
             tmp.onClick = delegate()
             {
                 Environment.Exit(0);
             };
             Add(tmp);
         }
+        public void showResults()
+        {
+            Add(new Background(@"backgroundMenu.png", false));
+            Add(new Cursor());
+            var str = new Label(415, 290, "TOP SCORES", Color.White, 0, false, 24);
+            str.Graphic.CenterOrigin();
+            Add(str);
+            var results = Records.Results;
+            var counter = 1;
+            foreach (var item in results)
+            {
+                str = new Label(415, 300 + counter * 18, item.ToString(), Color.White, 0, false, 18);
+                str.Graphic.CenterOrigin();
+                Add(str);
+                counter++;
+            }
+            var tmp = new Control(@"ui/buttonMenu.png", 350, 300 + counter * 20);
+            tmp.onClick = delegate()
+            {
+                GameScene.Instance.RemoveAll();
+                showMenu();
+            };
+            Add(tmp);
+        }
+
+        void resetPlayers()
+        {
+            Teams.playerBlue.reset();
+            Teams.playerRed.reset();
+
+            Teams.bluTeam.Clear();
+            Teams.redTeam.Clear();
+
+            StatisticWatcher.reset();
+            Global.reset();
+        }
         public void startGame()
         {
-            
+            resetPlayers();
 
             Add(new Background(@"background.png"));
 
@@ -144,7 +182,12 @@ namespace New
         }
         public GameScene()
         {
+             Global.loop.Volume = 0.2f;
+            Global.needGold.Volume = 0.5f;
+
+            Global.loop.Play();
             showMenu();
+            Records.Load();
             //startGame();
         }
     }

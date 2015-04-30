@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,47 @@ using New.res.src.unit;
 
 namespace New
 {
+    static class Records
+    {
+        static List<int> _Results = new List<int>();
+
+        public static List<int> Results
+        {
+            get
+            {
+                var counter = 0;
+                var tmp = new List<int>();
+                foreach (var item in _Results)
+                {
+                    if (counter++ >= 10) break;
+                    tmp.Add(item);
+                }
+                return tmp;
+            }
+        }
+        public static void Load()
+        {
+            try 
+            {
+                using (var stream = new StreamReader("results.dat"))
+                {
+                    while (!stream.EndOfStream)
+                    {
+                        var str = stream.ReadLine();
+                        var res = Convert.ToInt32(str.Split(':')[1]);
+                        if (!_Results.Contains(res)) _Results.Add(res);
+                    }
+                    _Results.Sort();
+                    _Results.Reverse();
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("ERROR");
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
     static class StatisticWatcher
     {
         public const int updatePeriod = 100;
@@ -74,6 +116,19 @@ namespace New
             _lastRecord = time;
             _statistic.Add(time, totalPoints);
         }
+
+        public static void reset()
+        {
+             _coinsEarned = 0;
+             _unitsProduced = 0;
+             _unitsKilled = 0;
+             _damageDone = 0;
+             _healthHealed = 0;
+
+             _lastRecord = 0;
+             _maxPoints = 0;
+             _statistic.Clear();
+        }
     }
     static class Buttons
     {
@@ -125,6 +180,7 @@ namespace New
         public const int Width = 800;
         public const int Height = 800;
 
+        public static void reset() { tick = 0; }
         public static double GetAngle(Vector2 a, Vector2 b)
         {
             return Math.Atan2(b.Y - a.Y, b.X - a.X);

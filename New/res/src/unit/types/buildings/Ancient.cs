@@ -33,31 +33,24 @@ namespace New.res.src.unit
                 if (obj != this)
                     obj.RemoveSelf();
             }
-
-            var tmp = new Text(30);
-            tmp.Y = 200;
-            tmp.X = Game.HalfWidth;
-            tmp.OutlineColor = Color.Black;
-            tmp.OutlineThickness = 2;
+            Label tmp = null;
             if (_team == Team.Blu)
             {
-                tmp.String = "YOU LOSE";
-                tmp.Color = Color.Red;
-
+                tmp = new Label(Game.HalfWidth, 200, "YOU LOSE", Color.Red, 0, false, 24);
             }
             else
             {
-                tmp.String = "YOU WIN";
-                tmp.Color = Color.Green;
+                tmp = new Label(Game.HalfWidth, 200, "YOU WIN", Color.Green, 0, false, 24);
             }
             GameScene.Instance.Add(new Cursor());
-            tmp.CenterOrigin();
-            GameScene.Instance.AddGraphic(tmp);
+            tmp.Graphic.CenterOrigin();
+            GameScene.Instance.Add(tmp);
             var statsOffset = Game.HalfWidth + 200;
-            var exit = new Control("ui/buttonExit.png", Game.HalfWidth - 65, 600);
+            var exit = new Control("ui/buttonMenu.png", Game.HalfWidth - 65, 600);
             exit.onClick = delegate()
             {
-                System.Environment.Exit(0);
+                GameScene.Instance.RemoveAll();
+                ((GameScene)GameScene.Instance).showMenu();
             };
             GameScene.Instance.Add(exit);
             var listResults = new List<Label>();
@@ -87,26 +80,27 @@ namespace New.res.src.unit
             Point graphStart = new Point(50, 565);
             Console.WriteLine("Scale: {0}; {1}", scaleX, scaleY);
             var startValue = 0;
-            Image field = null;
+            var field = new Entity();
             if (scaleX < 1)
             {
-                field = Image.CreateRectangle(425, 325, Color.Mix(Color.Gray, Color.Black));
+                field.Graphic = Image.CreateRectangle(425, 325, Color.Mix(Color.Gray, Color.Black));
                 scaleX = 1;
                 startValue = StatisticWatcher.lastRecord - 425 * StatisticWatcher.updatePeriod;
             }
             else
             {
-                field = Image.CreateRectangle(425, 325, Color.Mix(Color.Gray, Color.Black));
+                field.Graphic = Image.CreateRectangle(425, 325, Color.Mix(Color.Gray, Color.Black));
             }
 
             field.SetPosition(50, 240);
-            GameScene.Instance.AddGraphic(field);
+            GameScene.Instance.Add(field);
 
             for (var time = startValue; time <= StatisticWatcher.lastRecord; time += StatisticWatcher.updatePeriod)
             {
-                var temp = Image.CreateRectangle((int)scaleX, (int)((StatisticWatcher.statistic[time]) * scaleY), Color.Cyan);
+                var temp = new Entity();
+                temp.Graphic = Image.CreateRectangle((int)scaleX, (int)((StatisticWatcher.statistic[time]) * scaleY), Color.Cyan);
                 temp.SetPosition(graphStart.X + (float)Math.Round(scaleX, 2) * time / StatisticWatcher.updatePeriod, graphStart.Y - StatisticWatcher.statistic[time] * scaleY);
-                GameScene.Instance.AddGraphic(temp);
+                GameScene.Instance.Add(temp);
             }
         }
         public override void Damage(int damagePure)
@@ -124,7 +118,7 @@ namespace New.res.src.unit
                 _range = 140;
                 _hp = 1000;
                 _damage = 3;
-                _gun = new NoWeapon(GameScene.Instance);
+                _gun = new DragonWeapon(_damage, GameScene.Instance);//NoWeapon(GameScene.Instance);
                 _cooldownValue = 5;
                 _speed = 0;
             }

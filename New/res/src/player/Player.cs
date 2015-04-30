@@ -21,6 +21,13 @@ namespace New.res.src.player
             get { return _coins;  }
         }
 
+        public void reset()
+        {
+            _bonusDamage = 0;
+            _bonusArmor = -1;
+            _bonusHP = 0;
+            _coins = 0;
+        }
         public void AddCoin() { _coins++; }
 
         public void SpendCoin(int value) { _coins-= value; }
