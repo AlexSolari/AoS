@@ -1,0 +1,16 @@
+C:\Users\Cheese\Documents\GitHub\AoS\New\obj\Debug\Castle war.csprojResolveAssemblyReference.cache
+C:\Users\Cheese\Documents\GitHub\AoS\New\obj\Debug\New.exe
+C:\Users\Cheese\Documents\GitHub\AoS\New\obj\Debug\New.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\libsndfile-1.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\openal32.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\csfml-audio-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\csfml-graphics-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\csfml-window-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\New.exe.config
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\New.exe
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\New.pdb
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\Otter.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\sfmlnet-window-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\Cheese\Documents\GitHub\AoS\New\bin\Debug\Otter.pdb
