@@ -21,7 +21,6 @@ namespace CastleWar.Units
         protected Text Bar;
         protected int _type;
         protected Image _sprite;
-        protected Collider _collider;
         protected int _team;
         protected int _hp;
         protected int _maxhp;
@@ -285,13 +284,10 @@ namespace CastleWar.Units
             if (!isInitialized)
             {
                 isInitialized = true;
-                _collider = new CircleCollider(_range, Tags.unit);
 
                 SetGraphic(_sprite);
-                SetCollider(_collider);
 
                 _sprite.CenterOrigin();
-                _collider.CenterOrigin();
 
                 Player owner;
                 if (_team == Team.Blu)

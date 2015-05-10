@@ -11,7 +11,6 @@ namespace CastleWar.Weapons.Projectiles
     abstract class Projectile : Entity
     {
         protected Graphic _sprite;
-        protected Collider _collider;
         protected int _speed;
         protected Vector2 _direction;
         protected int _dmg;

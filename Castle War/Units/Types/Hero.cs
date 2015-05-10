@@ -9,7 +9,7 @@ using CastleWar.Abilities;
 
 namespace CastleWar.Units.Types
 {
-    class Hero : Unit
+    abstract class Hero : Unit
     {
         protected Ability _heroPassive;
         public Hero(string spritePath, int team, Point position, int type)

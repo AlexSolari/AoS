@@ -22,10 +22,8 @@ namespace CastleWar.Weapons.Projectiles
             :base(target, dmg, X, Y)
         {
             _sprite = Image.CreateCircle(0, Color.White);
-            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
             SetGraphic(_sprite);
-            SetCollider(_collider);
         }
     }
     class SimpleProjectile : Projectile
@@ -34,11 +32,9 @@ namespace CastleWar.Weapons.Projectiles
             : base(target, dmg, X, Y)
         {
             _sprite = Image.CreateCircle(2, Color.Green);
-            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
             SetGraphic(_sprite);
-            SetCollider(_collider);
         }
     }
     class LargeProjectile : Projectile
@@ -47,11 +43,9 @@ namespace CastleWar.Weapons.Projectiles
             : base(target, dmg, X, Y)
         {
             _sprite = Image.CreateCircle(3, Color.Gray);
-            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
             SetGraphic(_sprite);
-            SetCollider(_collider);
         }
     }
 
@@ -63,11 +57,9 @@ namespace CastleWar.Weapons.Projectiles
         {
 
             _sprite = Image.CreateCircle(3, Color.Yellow);
-            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
             SetGraphic(_sprite);
-            SetCollider(_collider);
         }
 
         public override void Update()
@@ -100,11 +92,9 @@ namespace CastleWar.Weapons.Projectiles
         {
 
             _sprite = Image.CreateCircle(0, Color.Red);
-            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 4;
 
             SetGraphic(_sprite);
-            SetCollider(_collider);
         }
 
         public override void Update()
@@ -138,11 +128,9 @@ namespace CastleWar.Weapons.Projectiles
         {
 
             _sprite = Image.CreateCircle(0, Color.Red);
-            _collider = new PointCollider(X, Y, Tags.projetile);
             _speed = 10;
 
             SetGraphic(_sprite);
-            SetCollider(_collider);
         }
 
         public override void Update()

@@ -239,13 +239,6 @@ namespace CastleWar
         public const int Red = 1;
         public const int Blu = -1;
     }
-    static class Tags
-    {
-        public const int unit = 0;
-        public const int projetile = 1;
-        public const int rangeCheck = 2;
-    }
-
     static class Type
     {
         public const int melee = 0;
