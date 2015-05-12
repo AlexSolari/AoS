@@ -10,7 +10,7 @@ namespace CastleWar.Units.Types.Warriors
 {
     class Melee : Warrior
     {
-        public Melee(int team, Point position)
+        public Melee(Team team, Point position)
             : base(Assets.UnitMeele, team, position, Type.melee)
         {
             

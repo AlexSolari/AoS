@@ -11,7 +11,7 @@ namespace CastleWar.Units.Types.Heroes
 {
     class Dragon : Hero
     {
-        public Dragon(int team, Point position)
+        public Dragon(Team team, Point position)
             : base(Assets.HeroDragon, team, position, Type.dragonHero)
         {
         }

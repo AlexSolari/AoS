@@ -11,7 +11,7 @@ namespace CastleWar.Units.Types.Warriors
 {
     class Ranged : Warrior
     {
-        public Ranged(int team, Point position)
+        public Ranged(Team team, Point position)
             : base(Assets.UnitRange, team, position, Type.range)
         {
             

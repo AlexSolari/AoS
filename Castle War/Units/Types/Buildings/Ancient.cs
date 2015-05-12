@@ -18,7 +18,7 @@ namespace CastleWar.Units.Types.Buildings
         private int _creepsCooldown;
         private int _siegeCD;
         private int _creepCount; 
-        public Ancient(int team, Point position)
+        public Ancient(Team team, Point position)
             : base(Assets.BuildingAncient, team, position, Type.ancient)
         {
             _creepsCD = 100;
@@ -140,21 +140,21 @@ namespace CastleWar.Units.Types.Buildings
             switch (_creepCount)
             {
                 case 0:
-                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X - 20 * GoodRnd.NextFloatBin()), (int)(Y + _team * 10))));
+                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X - 20 * GoodRnd.NextFloatBin()), (int)(Y + (int)_team * 10))));
                     _creepCount++;
                     break;
                 case 1:
-                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X + 20 * GoodRnd.NextFloatBin()), (int)(Y + _team * 10))));
+                    GameScene.Instance.Add(new Melee(_team, new Point((int)(X + 20 * GoodRnd.NextFloatBin()), (int)(Y + (int)_team * 10))));
                     _creepCount++;
                     break;
                 case 2:
-                    GameScene.Instance.Add(new Ranged(_team, new Point((int)(X), (int)(Y - _team * 10))));
+                    GameScene.Instance.Add(new Ranged(_team, new Point((int)(X), (int)(Y - (int)_team * 10))));
                     _creepCount++;
                     break;
                 case 3:
                     if (_siegeCD <= 0)
                     {
-                        GameScene.Instance.Add(new Siege(_team, new Point((int)(X + _team * 20), (int)(Y - _team * 20))));
+                        GameScene.Instance.Add(new Siege(_team, new Point((int)(X + (int)_team * 20), (int)(Y - (int)_team * 20))));
                         _siegeCD = 3 * _creepsCooldown;
                     }
                     _creepCount++;

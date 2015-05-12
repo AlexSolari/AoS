@@ -10,7 +10,7 @@ namespace CastleWar.Units.Types.Buildings
 {
     class Tower : Building
     {
-        public Tower(int team, Point position)
+        public Tower(Team team, Point position)
             : base(Assets.BuildingTower, team, position, Type.tower)
         {
             

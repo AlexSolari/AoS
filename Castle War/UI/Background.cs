@@ -15,31 +15,31 @@ namespace CastleWar.UI
         {
             switch (_nextUpgrade)
             {
-                case Upgades.Damage:
+                case (int)Upgades.Damage:
                     if (Teams.playerRed.coins >= 3) 
                     {
                         Teams.playerRed.SpendCoin(3);
-                        Teams.playerRed.Upgrade(_nextUpgrade);
+                        Teams.playerRed.Upgrade((Upgades)_nextUpgrade);
                         _nextUpgrade = GoodRnd.gen.Next(0, 3);
                         Console.WriteLine("RED: Upgraded Damage");
                         Teams.redTower.UpgradeDamage();
                     }
                     break;
-                case Upgades.Armor:
+                case (int)Upgades.Armor:
                     if (Teams.playerRed.coins >= 10)
                     {
                         Teams.playerRed.SpendCoin(10);
-                        Teams.playerRed.Upgrade(_nextUpgrade);
+                        Teams.playerRed.Upgrade((Upgades)_nextUpgrade);
                         _nextUpgrade = GoodRnd.gen.Next(0, 3);
                         Console.WriteLine("RED: Upgraded Armor");
                         Teams.redTower.UpgradeArmor();
                     }
                     break;
-                case Upgades.HP:
+                case (int)Upgades.HP:
                     if (Teams.playerRed.coins >= 5)
                     {
                         Teams.playerRed.SpendCoin(5);
-                        Teams.playerRed.Upgrade(_nextUpgrade);
+                        Teams.playerRed.Upgrade((Upgades)_nextUpgrade);
                         _nextUpgrade = GoodRnd.gen.Next(0, 3);
                         Console.WriteLine("RED: Upgraded HP");
                     }

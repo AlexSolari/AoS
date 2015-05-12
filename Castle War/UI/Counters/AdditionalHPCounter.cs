@@ -10,8 +10,8 @@ namespace CastleWar.UI.Counters
 {
     class AddHPCounter : Counter
     {
-        private int _team;
-        public AddHPCounter(float x, float y, int team)
+        private Team _team;
+        public AddHPCounter(float x, float y, Team team)
             : base(x, y)
         {
             _team = team;

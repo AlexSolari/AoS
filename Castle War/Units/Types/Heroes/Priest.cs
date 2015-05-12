@@ -11,7 +11,7 @@ namespace CastleWar.Units.Types.Heroes
 {
     class Priest : Hero
     {
-        public Priest(int team, Point position)
+        public Priest(Team team, Point position)
             : base(Assets.HeroPriest, team, position, Type.priestHero)
         {
         }

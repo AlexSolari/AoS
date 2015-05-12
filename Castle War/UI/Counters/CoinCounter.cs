@@ -10,8 +10,8 @@ namespace CastleWar.UI.Counters
 {
     class CoinCounter : Counter
     {
-        private int _team;
-        public CoinCounter(float x, float y, int team): base(x, y)
+        private Team _team;
+        public CoinCounter(float x, float y, Team team): base(x, y)
         {
             _team = team;
             if (_team == Team.Blu) ((Text)Graphic).String = Teams.playerBlue.coins.ToString();

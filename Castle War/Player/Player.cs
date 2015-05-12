@@ -36,17 +36,17 @@ namespace CastleWar.Players
         {
             _team = team;
         }
-        public void Upgrade(int type)
+        public void Upgrade(Upgades type)
         {
-            switch (type)
+            switch ((int)type)
             {
-                case Upgades.Armor:
+                case (int)Upgades.Armor:
                     _bonusArmor++;
                     break;
-                case Upgades.Damage:
+                case (int)Upgades.Damage:
                     _bonusDamage+=2;
                     break;
-                case Upgades.HP:
+                case (int)Upgades.HP:
                     _bonusHP+=5;
                     break;
                 default:

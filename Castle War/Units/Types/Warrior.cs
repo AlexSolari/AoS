@@ -11,7 +11,7 @@ namespace CastleWar.Units.Types
     
     abstract class Warrior : Unit
     {
-        public Warrior(string spritePath, int team, Point position, int type)
+        public Warrior(string spritePath, Team team, Point position, Type type)
             : base(spritePath, team, position, type)
         {
 

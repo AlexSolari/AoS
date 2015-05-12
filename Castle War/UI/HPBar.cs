@@ -10,16 +10,16 @@ namespace CastleWar.UI
     class HPBar : Entity
     {
         private int _hp = 0;
-        private int _team = 0;
-        public HPBar(float x, float y, int hp, int team, int type)
+        private Team _team = Team.Red;
+        public HPBar(float x, float y, int hp, Team team, SubType type)
         {
-            if (type == 0)
+            if (type == SubType.Warrior)
             {
                 X = x - 8;
                 Y = y - 30;
                 SetGraphic(new Text(10));
             }
-            else if (type == 1)
+            else if (type == SubType.Building)
             {
                 X = x - 16;
                 Y = y - 60;

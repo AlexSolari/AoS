@@ -10,7 +10,7 @@ namespace CastleWar.Units.Types.Warriors
 {
     class Siege : Warrior
     {
-        public Siege(int team, Point position)
+        public Siege(Team team, Point position)
             : base(Assets.UnitSiege, team, position, Type.siege)
         {
             

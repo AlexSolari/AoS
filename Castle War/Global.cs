@@ -86,7 +86,7 @@ namespace CastleWar
     }
     static class StatisticWatcher
     {
-        public const int updatePeriod = 100;
+        public static int updatePeriod = 100;
 
         private static int _coinsEarned = 0;
         private static int _unitsProduced = 0;
@@ -176,31 +176,31 @@ namespace CastleWar
         public static Control RedDragon;
         public static Control RedPriest;
     }
-    static class Upgades
+    enum Upgades
     {
-        public const int HP = 0;
-        public const int Armor = 1;
-        public const int Damage = 2;
+        HP,
+        Armor,
+        Damage
     }
-    static class Borders
+    enum Borders
     {
-        public const int Left = 573;
-        public const int Right = 226;
-        public const int Top = 0;
-        public const int Bottom = 800;
+        Left = 573,
+        Right = 226,
+        Top = 0,
+        Bottom = 800
     }
     static class Teams
     {
         static public Tower bluTower;
         static public Tower redTower;
         static public List<Entity> redTeam = new List<Entity>();
-        public static Player playerRed = new Player(Team.Red);
-        public static Player playerBlue = new Player(Team.Blu);
+        public static Player playerRed = new Player(Convert.ToInt32(Team.Red));
+        public static Player playerBlue = new Player(Convert.ToInt32(Team.Blu));
         static public List<Entity> bluTeam = new List<Entity>();
     }
     class Global
     {
-        public const int HPBarsUpdateRate = 2; //less = highter update rate
+        public static int HPBarsUpdateRate = 2; //less = highter update rate
         public static Music loop = new Music("music/loop.ogg", true);
         public static Sound needGold = new Sound("music/needGold.ogg", false);
 
@@ -209,8 +209,8 @@ namespace CastleWar
 
         public static Session playerOne;
         public static int tick = 0;
-        public const int Width = 800;
-        public const int Height = 800;
+        public static int Width = 800;
+        public static int Height = 800;
 
         public static void reset() { tick = 0; }
         public static double GetAngle(Vector2 a, Vector2 b)
@@ -234,31 +234,35 @@ namespace CastleWar
         public static Point bluAncientCoords = new Point(400, 700);
     }
 
-    static class Team
+    enum Team
     {
-        public const int Red = 1;
-        public const int Blu = -1;
+        Red,
+        Blu
     }
-    static class Type
+    enum Type
     {
-        public const int melee = 0;
-        public const int range = 1;
-        public const int siege = 2;
-        public const int tower = 3;
-        public const int ancient = 4;
-        public const int dragonHero = 5;
-        public const int priestHero = 6;
+        melee,
+        range,
+        siege,
+        tower,
+        ancient,
+        dragonHero,
+        priestHero
     }
-
-    static class ProjectileType
+    enum SubType
     {
-        public const int simple = 0;
-        public const int large = 1;
-        public const int building = 2;
-        public const int unvisible = 3;
-        public const int none = 4;
-        public const int dragon = 5;
-        public const int priest = 6;
+        Warrior,
+        Building,
+        Hero
     }
-    
+    enum ProjectileType
+    {
+        simple,
+        large,
+        building,
+        unvisible,
+        none,
+        dragon,
+        priest
+    }
 }

@@ -19,9 +19,9 @@ namespace CastleWar.Units
 
         protected int _handle;
         protected Text Bar;
-        protected int _type;
+        protected Type _type;
         protected Image _sprite;
-        protected int _team;
+        protected Team _team;
         protected int _hp;
         protected int _maxhp;
         protected int _armor;
@@ -40,7 +40,7 @@ namespace CastleWar.Units
         protected bool isAlive = true;
         protected bool isFlying = false;
 
-        public Unit(string spritePath, int team, Point position, int type)
+        public Unit(string spritePath, Team team, Point position, Type type)
         {
             _handle = GoodRnd.gen.Next(Int32.MinValue, Int32.MaxValue);
              if (team == Team.Red) spritePath = @"red/" + spritePath;
@@ -123,7 +123,7 @@ namespace CastleWar.Units
                 RemoveSelf();
             }
         }
-        public int type
+        public Type type
         {
             get { return _type; }
         }
@@ -131,7 +131,7 @@ namespace CastleWar.Units
         {
             get { return isAlive; }
         }
-        public int team
+        public Team team
         {
             get { return _team; }
         }
@@ -205,10 +205,10 @@ namespace CastleWar.Units
 
         protected void PreventOutOfBorders()
         {
-            if( (X + COLLISION_RADIUS > Borders.Left) ||
-                (X - COLLISION_RADIUS < Borders.Right) ||
-                (Y + COLLISION_RADIUS > Borders.Bottom) ||
-                (Y - COLLISION_RADIUS < Borders.Top) )
+            if( (X + COLLISION_RADIUS > (int)Borders.Left) ||
+                (X - COLLISION_RADIUS < (int)Borders.Right) ||
+                (Y + COLLISION_RADIUS > (int)Borders.Bottom) ||
+                (Y - COLLISION_RADIUS < (int)Borders.Top))
             {
                 RemoveSelf();
                 if (_team == Team.Red)
@@ -242,8 +242,8 @@ namespace CastleWar.Units
                 {
                     var randomDirection = new Vector2();
                     var randomShift = GoodRnd.gen.Next(-5, 5);
-                    randomDirection.X = target.X - X + randomShift * (float)Math.Sin(Global.GetAngle(randomDirection, new Vector2(0, _team)) * 180 / 3.14);
-                    randomDirection.Y = target.Y - Y + randomShift * (float)Math.Cos(Global.GetAngle(randomDirection, new Vector2(0, _team)) * 180 / 3.14);
+                    randomDirection.X = target.X - X + randomShift * (float)Math.Sin(Global.GetAngle(randomDirection, new Vector2(0, (int)_team)) * 180 / 3.14);
+                    randomDirection.Y = target.Y - Y + randomShift * (float)Math.Cos(Global.GetAngle(randomDirection, new Vector2(0, (int)_team)) * 180 / 3.14);
                     randomDirection *= -1;
 
                     Global.ReduceVector(ref randomDirection, Convert.ToSingle(Distance)/4);
