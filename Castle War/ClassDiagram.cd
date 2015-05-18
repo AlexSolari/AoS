@@ -56,22 +56,8 @@
       <FileName>Global.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Upgades" Collapsed="true">
-    <Position X="20.25" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAA=</HashCode>
-      <FileName>Global.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CastleWar.Borders" Collapsed="true">
-    <Position X="23.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACACAAAAAAAA=</HashCode>
-      <FileName>Global.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="CastleWar.Teams" Collapsed="true">
-    <Position X="16.75" Y="4.5" Width="1.5" />
+    <Position X="18.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAADACAAAAAAAAEAAAAAAAAAAAAgAAAAAgAA=</HashCode>
       <FileName>Global.cs</FileName>
@@ -81,27 +67,6 @@
     <Position X="16.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QABQAAAEBAIACAAAQAAEAEgACAAAAAAAgAAAAAAACAA=</HashCode>
-      <FileName>Global.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CastleWar.Team" Collapsed="true">
-    <Position X="23.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
-      <FileName>Global.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CastleWar.Type" Collapsed="true">
-    <Position X="18.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAAIBAAAAAAAAAAAgAAAAAAAAAAAUAAAAAQAAAA=</HashCode>
-      <FileName>Global.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="CastleWar.ProjectileType" Collapsed="true">
-    <Position X="18.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EQAAAAAAAAAEAAAAACAABAAAABAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>Global.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -161,225 +126,247 @@
       <FileName>UI\Label.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.UI.Counters.AddArmorCounter" Collapsed="true">
-    <Position X="0.5" Y="12" Width="1.5" />
+  <Class Name="CastleWar.UI.Counters.AddArmorCounter">
+    <Position X="15.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UI\Counters\AdditionalArmorCounter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.UI.Counters.AddDMGCounter" Collapsed="true">
-    <Position X="2.75" Y="12" Width="1.5" />
+  <Class Name="CastleWar.UI.Counters.AddDMGCounter">
+    <Position X="18" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UI\Counters\AdditionalDmgCounter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.UI.Counters.AddHPCounter" Collapsed="true">
-    <Position X="5" Y="12" Width="1.5" />
+  <Class Name="CastleWar.UI.Counters.AddHPCounter">
+    <Position X="20.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UI\Counters\AdditionalHPCounter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.UI.Counters.CoinCounter" Collapsed="true">
-    <Position X="7.25" Y="12" Width="1.5" />
+  <Class Name="CastleWar.UI.Counters.CoinCounter">
+    <Position X="22.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UI\Counters\CoinCounter.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.UI.Counters.Counter" Collapsed="true">
-    <Position X="3.75" Y="10.5" Width="1.5" />
+  <Class Name="CastleWar.UI.Counters.Counter">
+    <Position X="19" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UI\Counters\Counter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CastleWar.Units.Types.Building" Collapsed="true">
-    <Position X="2" Y="8" Width="1.5" />
+    <Position X="4.75" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\Types\Building.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CastleWar.Units.Types.Hero" Collapsed="true">
-    <Position X="6.5" Y="8" Width="1.5" />
+    <Position X="4.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\Types\Hero.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Types.Warrior" Collapsed="true">
-    <Position X="12" Y="8" Width="1.5" />
+  <Class Name="CastleWar.Units.Types.Warrior">
+    <Position X="10.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\Types\Warrior.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Types.Buildings.Ancient" Collapsed="true">
-    <Position X="0.75" Y="9.5" Width="1.5" />
+  <Class Name="CastleWar.Units.Types.Buildings.Ancient">
+    <Position X="2.25" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAQAAACAAAAAAAAACCAAAAAAAAAAABAAAAQAABAAAAA=</HashCode>
       <FileName>Units\Types\Buildings\Ancient.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Types.Buildings.Tower" Collapsed="true">
-    <Position X="3" Y="9.5" Width="1.5" />
+  <Class Name="CastleWar.Units.Types.Buildings.Tower">
+    <Position X="4.75" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Units\Types\Buildings\Tower.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Types.Heroes.Dragon" Collapsed="true">
-    <Position X="5.25" Y="9.5" Width="1.5" />
+  <Class Name="CastleWar.Units.Types.Heroes.Dragon">
+    <Position X="4.75" Y="11.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\Types\Heroes\Dragon.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Types.Heroes.Priest" Collapsed="true">
-    <Position X="7.5" Y="9.5" Width="1.5" />
+  <Class Name="CastleWar.Units.Types.Heroes.Priest">
+    <Position X="2.5" Y="10.25" Width="1.5" />
+    <InheritanceLine Type="CastleWar.Units.Types.Hero" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="10.625" />
+        <Point X="4.375" Y="10.625" />
+        <Point X="4.375" Y="11.023" />
+        <Point X="4" Y="11.023" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\Types\Heroes\Priest.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Types.Warriors.Melee" Collapsed="true">
-    <Position X="9.75" Y="9.5" Width="1.5" />
+  <Class Name="CastleWar.Units.Types.Warriors.Melee">
+    <Position X="9.5" Y="13.5" Width="1.5" />
+    <InheritanceLine Type="CastleWar.Units.Types.Warrior" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="13.175" />
+        <Point X="11.5" Y="14.062" />
+        <Point X="11" Y="14.062" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\Types\Warriors\Melee.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Types.Warriors.Ranged" Collapsed="true">
-    <Position X="12" Y="9.5" Width="1.5" />
+  <Class Name="CastleWar.Units.Types.Warriors.Ranged">
+    <Position X="12.25" Y="13.5" Width="1.5" />
+    <InheritanceLine Type="CastleWar.Units.Types.Warrior" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="13.175" />
+        <Point X="11.5" Y="14.062" />
+        <Point X="12.25" Y="14.062" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\Types\Warriors\Ranged.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Types.Warriors.Siege" Collapsed="true">
-    <Position X="14.25" Y="9.5" Width="1.5" />
+  <Class Name="CastleWar.Units.Types.Warriors.Siege">
+    <Position X="13" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Units\Types\Warriors\Siege.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Units.Unit" Collapsed="true">
+  <Class Name="CastleWar.Units.Unit">
     <Position X="7.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAUAIgDAREgAyITAEAAAAQAgRMARAAAEBAGYWAEAAAA=</HashCode>
       <FileName>Units\Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Gun" Collapsed="true">
-    <Position X="7.5" Y="3.5" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Gun">
+    <Position X="7.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAIAABAAAAAAAAgQQAAAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>Weapons\Gun.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.MeleeWeapon" Collapsed="true">
-    <Position X="0.75" Y="4.75" Width="1.5" />
+  <Class Name="CastleWar.Weapons.MeleeWeapon">
+    <Position X="3" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.RangeWeapon" Collapsed="true">
+  <Class Name="CastleWar.Weapons.RangeWeapon">
     <Position X="3" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.SiegeWeapon" Collapsed="true">
-    <Position X="5.25" Y="4.75" Width="1.5" />
+  <Class Name="CastleWar.Weapons.SiegeWeapon">
+    <Position X="5.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.TowerWeapon" Collapsed="true">
-    <Position X="7.5" Y="4.75" Width="1.5" />
+  <Class Name="CastleWar.Weapons.TowerWeapon">
+    <Position X="5.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.DragonWeapon" Collapsed="true">
-    <Position X="9.75" Y="4.75" Width="1.5" />
+  <Class Name="CastleWar.Weapons.DragonWeapon">
+    <Position X="9.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.PriestWeapon" Collapsed="true">
-    <Position X="12" Y="4.75" Width="1.5" />
+  <Class Name="CastleWar.Weapons.PriestWeapon">
+    <Position X="11.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.NoWeapon" Collapsed="true">
-    <Position X="14.25" Y="4.75" Width="1.5" />
+  <Class Name="CastleWar.Weapons.NoWeapon">
+    <Position X="13.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Weapons.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Projectiles.Projectile" Collapsed="true">
-    <Position X="7.5" Y="0.5" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Projectiles.Projectile">
+    <Position X="14.5" Y="14.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAQAQAAAAAAABAEIAAAAAAA=</HashCode>
       <FileName>Weapons\Projectiles\Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Projectiles.NoProjectile" Collapsed="true">
-    <Position X="0.75" Y="2" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Projectiles.NoProjectile">
+    <Position X="1.5" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Projectiles\Projectiles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Projectiles.UnvisibleProjectile" Collapsed="true">
-    <Position X="3" Y="2" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Projectiles.UnvisibleProjectile">
+    <Position X="3.75" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Projectiles\Projectiles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Projectiles.SimpleProjectile" Collapsed="true">
-    <Position X="5.25" Y="2" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Projectiles.SimpleProjectile">
+    <Position X="6" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Projectiles\Projectiles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Projectiles.LargeProjectile" Collapsed="true">
-    <Position X="7.5" Y="2" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Projectiles.LargeProjectile">
+    <Position X="8.25" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Projectiles\Projectiles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Projectiles.BuildingProjectile" Collapsed="true">
-    <Position X="9.75" Y="2" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Projectiles.BuildingProjectile">
+    <Position X="10.5" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Projectiles\Projectiles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Projectiles.DragonProjectile" Collapsed="true">
-    <Position X="12" Y="2" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Projectiles.DragonProjectile">
+    <Position X="12.75" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Projectiles\Projectiles.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="CastleWar.Weapons.Projectiles.PriestProjectile" Collapsed="true">
-    <Position X="14.25" Y="2" Width="1.5" />
+  <Class Name="CastleWar.Weapons.Projectiles.PriestProjectile">
+    <Position X="15" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Weapons\Projectiles\Projectiles.cs</FileName>
