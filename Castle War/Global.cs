@@ -21,11 +21,18 @@ namespace CastleWar
         public const string ButtonMenu = @"ui/buttonMenu.png";
         public const string ButtonExit = @"ui/buttonExit.png";
         public const string ButtonResults = @"ui/buttonResults.png";
+
         public const string ButtonHP = @"ui/buttonHP.png";
         public const string ButtonArmor = @"ui/buttonArmor.png";
         public const string ButtonDamage = @"ui/buttonDamage.png";
         public const string ButtonDragon = @"ui/summonDragon.png";
         public const string ButtonPriest = @"ui/summonPriest.png";
+
+        public const string ButtonHPDisabled = @"ui/buttonHPDisabled.png";
+        public const string ButtonArmorDisabled = @"ui/buttonArmorDisabled.png";
+        public const string ButtonDamageDisabled = @"ui/buttonDamageDisabled.png";
+        public const string ButtonDragonDisabled = @"ui/summonDragonDisabled.png";
+        public const string ButtonPriestDisabled = @"ui/summonPriestDisabled.png";
 
         public const string UnitMeele = @"melee.png";
         public const string UnitRange = @"range.png";
@@ -47,7 +54,7 @@ namespace CastleWar
     {
         static List<int> _Results = new List<int>();
 
-        public static List<int> Results
+        public static List<int> Get
         {
             get
             {
@@ -182,7 +189,7 @@ namespace CastleWar
         Armor,
         Damage
     }
-    enum Borders
+    enum Border
     {
         Left = 573,
         Right = 226,

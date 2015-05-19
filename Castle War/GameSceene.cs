@@ -59,7 +59,7 @@ namespace CastleWar
             var str = new Label(415, 290, "TOP SCORES", Color.White, 0, false, 24);
             str.Graphic.CenterOrigin();
             Add(str);
-            var results = Records.Results;
+            var results = Records.Get;
             var counter = 1;
             foreach (var item in results)
             {
@@ -164,11 +164,11 @@ namespace CastleWar
                 else Global.needGold.Play();
             };
 
-            Buttons.RedHP = Add(new Control(Assets.ButtonHP, 40, 129));
-            Buttons.RedArmor = Add(new Control(Assets.ButtonArmor, 40, 196));
-            Buttons.RedDamage = Add(new Control(Assets.ButtonDamage, 40, 258));
-            Buttons.RedDragon = Add(new Control(Assets.ButtonDragon, 37, 476));
-            Buttons.RedPriest = Add(new Control(Assets.ButtonPriest, 37, 556));
+            Buttons.RedHP = Add(new Control(Assets.ButtonHPDisabled, 40, 129));
+            Buttons.RedArmor = Add(new Control(Assets.ButtonArmorDisabled, 40, 196));
+            Buttons.RedDamage = Add(new Control(Assets.ButtonDamageDisabled, 40, 258));
+            Buttons.RedDragon = Add(new Control(Assets.ButtonDragonDisabled, 37, 476));
+            Buttons.RedPriest = Add(new Control(Assets.ButtonPriestDisabled, 37, 556));
 
             Add(new CoinCounter(700, 70, Team.Blu));
             Add(new CoinCounter(110, 70, Team.Red));
@@ -191,7 +191,6 @@ namespace CastleWar
             Global.loop.Play();
             showMenu();
             Records.Load();
-            //startGame();
         }
     }
 }

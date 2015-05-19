@@ -205,10 +205,10 @@ namespace CastleWar.Units
 
         protected void PreventOutOfBorders()
         {
-            if( (X + COLLISION_RADIUS > (int)Borders.Left) ||
-                (X - COLLISION_RADIUS < (int)Borders.Right) ||
-                (Y + COLLISION_RADIUS > (int)Borders.Bottom) ||
-                (Y - COLLISION_RADIUS < (int)Borders.Top))
+            if( (X + COLLISION_RADIUS > (int)Border.Left) ||
+                (X - COLLISION_RADIUS < (int)Border.Right) ||
+                (Y + COLLISION_RADIUS > (int)Border.Bottom) ||
+                (Y - COLLISION_RADIUS < (int)Border.Top))
             {
                 RemoveSelf();
                 if (_team == Team.Red)
