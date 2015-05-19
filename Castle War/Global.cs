@@ -14,6 +14,9 @@ namespace CastleWar
 {
     static class Assets
     {
+        public const string ButtonPause = @"ui/buttonPause.png";
+        public const string ButtonResume = @"ui/buttonResume.png";
+
         public const string BackgroungMenu = @"ui/backgroundMenu.png";
         public const string BackgroungGame = @"ui/background.png";
 
@@ -171,6 +174,9 @@ namespace CastleWar
     }
     static class Buttons
     {
+        public static Control PauseResume;
+        public static Control ExitToMenu;
+
         public static Control BluHP;
         public static Control BluArmor;
         public static Control BluDamage;
@@ -219,6 +225,7 @@ namespace CastleWar
         public static int Width = 800;
         public static int Height = 800;
 
+        public static bool isGamePaused = false;
         public static void reset() { tick = 0; }
         public static double GetAngle(Vector2 a, Vector2 b)
         {

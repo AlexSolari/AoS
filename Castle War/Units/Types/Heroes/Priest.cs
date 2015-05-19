@@ -19,9 +19,10 @@ namespace CastleWar.Units.Types.Heroes
         public override void Update()
         {
             
-            _heroPassive = new Ability(AbilityList.HealingAura, false, 110, this);
+            
             if (!isInitialized)
             {
+                _heroPassive = new Ability(AbilityList.HealingAura, false, 110, this);
                 _armor = 5;
                 _range = 150;
                 _hp = 100;
@@ -32,7 +33,7 @@ namespace CastleWar.Units.Types.Heroes
             }
             
             base.Update();
-            if (Global.tick % 40 == 0)
+            if (Global.tick % 40 == 0 && !Global.isGamePaused)
             {
                 _heroPassive.Effect();
             }

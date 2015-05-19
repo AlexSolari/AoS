@@ -23,11 +23,12 @@ namespace CastleWar.Weapons.Projectiles
             X = x;
             Y = y;
             _direction = new Vector2(target.X - X, target.Y - Y);
-            LifeSpan = 100;
         }
 
         public override void Update()
         {
+            if (Global.isGamePaused) return;
+
             _direction.X = _target.X - X;
             _direction.Y = _target.Y - Y;
 

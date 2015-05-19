@@ -24,3 +24,16 @@ C:\Users\Cheese\Documents\GitHub\AoS\Otter\bin\Release\sfmlnet-window-2.dll
 C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Release\Otter.csprojResolveAssemblyReference.cache
 C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Release\Otter.dll
 C:\Users\Cheese\Documents\GitHub\AoS\Otter\obj\x86\Release\Otter.pdb
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\libsndfile-1.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\openal32.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\csfml-audio-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\csfml-graphics-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\csfml-window-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\Otter.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\Otter.pdb
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\sfmlnet-audio-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\sfmlnet-graphics-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\bin\Release\sfmlnet-window-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\obj\x86\Release\Otter.csprojResolveAssemblyReference.cache
+C:\Users\Solari\Documents\GitHub\AoS\Otter\obj\x86\Release\Otter.dll
+C:\Users\Solari\Documents\GitHub\AoS\Otter\obj\x86\Release\Otter.pdb

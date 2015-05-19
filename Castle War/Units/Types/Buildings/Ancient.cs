@@ -125,14 +125,16 @@ namespace CastleWar.Units.Types.Buildings
                 _cooldownValue = 5;
                 _speed = 0;
             }
-            _creepsCD--;
-            _siegeCD--;
-            if(_creepsCD <= 0 )
-            {
-                spawnCreeps();
-                
-            }
             base.Update();
+            if (!Global.isGamePaused)
+            {
+                _creepsCD--;
+                _siegeCD--;
+                if (_creepsCD <= 0)
+                {
+                    spawnCreeps();
+                }
+            }
         }
 
         public void spawnCreeps()

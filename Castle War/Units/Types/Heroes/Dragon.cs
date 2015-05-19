@@ -32,12 +32,13 @@ namespace CastleWar.Units.Types.Heroes
                 _cooldownValue = 10;
                 _speed = 2;
             }
-            if (_cooldown <= 0)
+            base.Update();
+            if (_cooldown <= 0 && !Global.isGamePaused)
             {
                 _heroPassive.Effect();
                 _cooldown = _cooldownValue;
             }
-            base.Update();
+            
         }
     }
 }

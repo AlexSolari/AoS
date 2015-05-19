@@ -106,7 +106,7 @@ namespace CastleWar
         {
             Add(new Label(5, 780, "TIP: You are controlling bottom (blue) castle.", Color.White, 1000));
 
-            Buttons.BluHP = Add(new Control(Assets.ButtonHP, 633, 129));
+            Buttons.BluHP = Add(new Control(Assets.ButtonHP, 633, 129, 5, Assets.ButtonHPDisabled));
             Buttons.BluHP.onClick = delegate()
             {
                 if (Teams.playerBlue.coins >= 5)
@@ -117,7 +117,7 @@ namespace CastleWar
                 }
                 else Global.needGold.Play();
             };
-            Buttons.BluArmor = Add(new Control(Assets.ButtonArmor, 633, 196));
+            Buttons.BluArmor = Add(new Control(Assets.ButtonArmor, 633, 196, 10, Assets.ButtonArmorDisabled));
             Buttons.BluArmor.onClick = delegate()
             {
                 if (Teams.playerBlue.coins >= 10)
@@ -129,7 +129,7 @@ namespace CastleWar
                 }
                 else Global.needGold.Play();
             };
-            Buttons.BluDamage = Add(new Control(Assets.ButtonDamage, 633, 258));
+            Buttons.BluDamage = Add(new Control(Assets.ButtonDamage, 633, 258, 3, Assets.ButtonDamageDisabled));
             Buttons.BluDamage.onClick = delegate()
             {
                 if (Teams.playerBlue.coins >= 3)
@@ -141,7 +141,7 @@ namespace CastleWar
                 }
                 else Global.needGold.Play();
             };
-            Buttons.BlueDragon = Add(new Control(Assets.ButtonDragon, 633, 476));
+            Buttons.BlueDragon = Add(new Control(Assets.ButtonDragon, 633, 476, 50, Assets.ButtonDragonDisabled));
             Buttons.BlueDragon.onClick = delegate()
             {
                 if (Teams.playerBlue.coins >= 50)
@@ -152,7 +152,7 @@ namespace CastleWar
                 }
                 else Global.needGold.Play();
             };
-            Buttons.BluePriest = Add(new Control(Assets.ButtonPriest, 633, 556));
+            Buttons.BluePriest = Add(new Control(Assets.ButtonPriest, 633, 556, 15, Assets.ButtonPriestDisabled));
             Buttons.BluePriest.onClick = delegate()
             {
                 if (Teams.playerBlue.coins >= 15)
@@ -162,6 +162,23 @@ namespace CastleWar
                     Teams.playerBlue.SpendCoin(15);
                 }
                 else Global.needGold.Play();
+            };
+
+            Buttons.PauseResume = Add(new Control(Assets.ButtonPause, 633, 733));
+            Buttons.PauseResume.onClick = delegate()
+            {
+                Global.isGamePaused = !Global.isGamePaused;
+                if (Global.isGamePaused)
+                    Buttons.PauseResume.SetGraphic(new Image(Assets.ButtonResume));
+                else
+                    Buttons.PauseResume.SetGraphic(new Image(Assets.ButtonPause));
+            };
+
+            Buttons.ExitToMenu = Add(new Control(Assets.ButtonExit, 37, 733));
+            Buttons.ExitToMenu.onClick = delegate()
+            {
+                GameScene.Instance.RemoveAll();
+                showMenu();
             };
 
             Buttons.RedHP = Add(new Control(Assets.ButtonHPDisabled, 40, 129));

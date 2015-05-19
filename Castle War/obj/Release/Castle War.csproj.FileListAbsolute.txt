@@ -1,0 +1,18 @@
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\CastleWar.exe.config
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\libsndfile-1.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\openal32.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\csfml-audio-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\csfml-graphics-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\csfml-window-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\CastleWar.exe
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\CastleWar.pdb
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\Otter.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\sfmlnet-graphics-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\sfmlnet-window-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\sfmlnet-audio-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Release\Otter.pdb
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\obj\Release\Castle War.csprojResolveAssemblyReference.cache
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\obj\Release\CastleWar.Properties.Resources.resources
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\obj\Release\Castle War.csproj.GenerateResource.Cache
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\obj\Release\CastleWar.exe
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\obj\Release\CastleWar.pdb

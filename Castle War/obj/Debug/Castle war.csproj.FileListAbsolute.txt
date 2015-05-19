@@ -30,3 +30,20 @@ C:\Users\Cheese\Documents\GitHub\AoS\Castle War\bin\Debug\Otter.pdb
 C:\Users\Cheese\Documents\GitHub\AoS\Castle War\obj\Debug\Castle War.csprojResolveAssemblyReference.cache
 C:\Users\Cheese\Documents\GitHub\AoS\Castle War\obj\Debug\New.exe
 C:\Users\Cheese\Documents\GitHub\AoS\Castle War\obj\Debug\New.pdb
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\New.exe.config
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\obj\Debug\New.exe
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\obj\Debug\New.pdb
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\libsndfile-1.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\openal32.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\csfml-audio-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\csfml-graphics-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\csfml-window-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\New.exe
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\New.pdb
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\Otter.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\sfmlnet-graphics-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\sfmlnet-window-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\sfmlnet-audio-2.dll
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\Otter.pdb
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\obj\Debug\Castle War.csprojResolveAssemblyReference.cache
+C:\Users\Solari\Documents\GitHub\AoS\Castle War\bin\Debug\CastleWar.exe.config

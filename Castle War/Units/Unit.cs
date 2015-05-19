@@ -280,7 +280,8 @@ namespace CastleWar.Units
         public bool isBuilding { get { return (_type == Type.tower || _type == Type.ancient); } }
         public override void Update()
         {
-            
+            if (Global.isGamePaused) return;
+
             if (!isInitialized)
             {
                 isInitialized = true;
